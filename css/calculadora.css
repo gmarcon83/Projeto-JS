@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+
+main {
+  width: var(--largura-meio);
+  max-width: var(--largura-maxima);
+  margin: auto;
+}
+
+#calculadoras {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 5fr 6fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+@media only screen and (max-width: 1200px) {
+  #calculadoras {
+    grid-template-columns: 1fr;
+  }
+}
+
+#calculadora-normal {
+  background-color: black;
+  box-shadow: 1px 1px 1px black;
+  border-radius: 4px;
+  display: grid;
+  justify-items: stretch;
+  width: 100%;
+  max-width: 610px;
+  grid-template-columns: 2fr 2fr 2fr 1fr;
+  grid-template-rows: 5fr 12px 2fr 4fr 4fr 4fr 4fr;
+  gap: 12px;
+  padding: 16px;
+  grid-template-areas:
+    "display display display  power "
+    "   .       .       .       .   "
+    " abre    fecha   apaga     CE  "
+    "  n7      n8      n9      mais "
+    "  n4      n5      n6      menos"
+    "  n1      n2      n3      mult "
+    "  n0     ponto   igual    divd ";
+}
+
+#calculadora-cientifica {
+  background-color: black;
+  box-shadow: 1px 1px 1px black;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 735px;
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr 1fr 1fr;
+  grid-template-rows: 5fr 12px 2fr 4fr 4fr 4fr 4fr;
+  gap: 12px;
+  padding: 16px;
+  grid-template-areas:
+    "display display display display  power"
+    "   .       .       .      .       .   "
+    " abre    fecha   apaga    CE      CE  "
+    "  n7      n8      n9     mais    raiz "
+    "  n4      n5      n6     menos   quad "
+    "  n1      n2      n3     mult    cubo "
+    "  n0     ponto   igual   divd     pi  ";
+}
+
+#calculadora-cientifica div,
+#calculadora-normal div {
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3em;
+  font-family: "Orbitron";
+}
+
+#cndisplay,
+#ccdisplay {
+  border-radius: 0px !important;
+  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.377);
+  grid-area: display;
+  font-size: 2em !important;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.322);
+}
+
+.calc-btn {
+  cursor: pointer;
+  box-shadow: inset -2px -2px 2px rgba(0, 0, 0, 0.459);
+  min-height: 38px;
+}
+
+.calc-btn::selection {
+  background-color: transparent;
+}
+
+.calc-btn:hover {
+  box-shadow: 0 0 5px blue, inset -2px -2px 2px rgba(0, 0, 0, 0.459);
+  transition: 0.1s;
+}
+
+.calc-btn:active {
+  box-shadow: 0 0 5px blue, inset 2px 2px 2px rgba(0, 0, 0, 0.459);
+  padding: 2px 0 0 2px;
+}
+#cndisplay,
+#ccdisplay {
+  background-color: aliceblue;
+}
+
+#cnpower,
+#ccpower {
+  background-color: coral;
+}
+
+.calc-outros {
+  background-color: rgb(212, 225, 255);
+}
+
+.calc-principal {
+  background-color: aliceblue;
+}
+
+/* ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ */
+/* ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲  Areas Ambas  ▲▼▲▼▲▼▲▼▲▼▲▼▲▼ */
+/* ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ */
+
+#cnpower,
+#ccpower {
+  grid-area: power;
+}
+#cnabre,
+#ccabre {
+  grid-area: abre;
+}
+#cnfecha,
+#ccfecha {
+  grid-area: fecha;
+}
+#cnapaga,
+#ccapaga {
+  grid-area: apaga;
+}
+#cnlimpar,
+#cclimpar {
+  grid-area: CE;
+}
+#cn0,
+#cc0 {
+  grid-area: n0;
+}
+#cn1,
+#cc1 {
+  grid-area: n1;
+}
+#cn2,
+#cc2 {
+  grid-area: n2;
+}
+#cn3,
+#cc3 {
+  grid-area: n3;
+}
+#cn4,
+#cc4 {
+  grid-area: n4;
+}
+#cn5,
+#cc5 {
+  grid-area: n5;
+}
+#cn6,
+#cc6 {
+  grid-area: n6;
+}
+#cn7,
+#cc7 {
+  grid-area: n7;
+}
+#cn8,
+#cc8 {
+  grid-area: n8;
+}
+#cn9,
+#cc9 {
+  grid-area: n9;
+}
+#cnponto,
+#ccponto {
+  grid-area: ponto;
+}
+#cnigual,
+#ccigual {
+  grid-area: igual;
+}
+#cnmais,
+#ccmais {
+  grid-area: mais;
+}
+#cnmenos,
+#ccmenos {
+  grid-area: menos;
+}
+#cnmult,
+#ccmult {
+  grid-area: mult;
+}
+#cndivd,
+#ccdivd {
+  grid-area: divd;
+}
+
+/* ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ */
+/* ▲▼▲▼▲▼▲▼▲▼▲  Areas Cientifica  ▼▲▼▲▼▲▼▲▼▲▼▲▼ */
+/* ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ */
+
+#ccraiz {
+  grid-area: raiz;
+  font-size: 0.85em !important;
+}
+
+#ccquad {
+  grid-area: quad;
+}
+
+#cccubo {
+  grid-area: cubo;
+}
+
+#ccpi {
+  grid-area: pi;
+}
