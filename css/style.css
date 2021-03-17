@@ -1,12 +1,79 @@
+:root {
+  --largura-meio: 90%;
+  --largura-maxima: 1400px;
+}
+
 .cores-dia {
-  --cor-primaria-suave: #e7545b;
+  --cor-acento-suave: #5957e7;
+  --cor-acento-normal: #3431f1;
+  --cor-acento-forte: #0e0ae7;
+  --cor-fundo-clara: #e0ebf6;
+  --cor-fundo-normal: #c7d6e4;
+  --cor-fundo-escura: #b0bbc5;
+  --cor-texto-clara: #222;
+  --cor-texto-normal: #111;
+  --cor-texto-escura: #000;
 }
 
 .cores-noite {
-  --cor-primaria-suave: #7b54e7;
+  --cor-acento-suave: #5957e7;
+  --cor-acento-normal: #3431f1;
+  --cor-acento-forte: #0e0ae7;
+  --cor-fundo-clara: #253341;
+  --cor-fundo-normal: #192734;
+  --cor-fundo-escura: #15202b;
+  --cor-texto-clara: #fff;
+  --cor-texto-normal: #eee;
+  --cor-texto-escura: #ddd;
 }
 
-div {
-  margin: 5px;
-  background-color: var(--cor-primaria-suave);
+.fonte-normal {
+  font-size: 1em;
+}
+
+.fonte-grande {
+  font-size: 1.5em;
+}
+
+/* --------------------- */
+
+header {
+  height: 80px;
+  background-color: var(--cor-fundo-escura);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#quem-somos-fundo {
+  background-color: var(--cor-fundo-clara);
+  height: calc(100vh - 80px);
+}
+
+#quem-somos {
+}
+
+#calculadora-fundo {
+  background-color: var(--cor-fundo-normal);
+  height: 400px;
+}
+
+#cadastro-fundo {
+  background-color: var(--cor-fundo-clara);
+  height: 400px;
+}
+
+#conversor-fundo {
+  background-color: var(--cor-fundo-normal);
+  height: 400px;
+}
+
+#equipe-fundo {
+  background-color: var(--cor-fundo-clara);
+  height: 400px;
+}
+
+footer {
+  background-color: var(--cor-fundo-escura);
+  height: 80px;
 }
