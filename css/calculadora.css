@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+
+main {
+  width: var(--largura-meio);
+  max-width: var(--largura-maxima);
+  background-color: aqua;
+  margin: auto;
+}
+
+#calculadoras {
+  display: grid;
+  grid-template-columns: 5fr 6fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+#calculadora-normal {
+  background-color: black;
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr 1fr;
+  grid-template-rows: 5fr 12px 2fr 4fr 4fr 4fr 4fr;
+  gap: 12px;
+  padding: 12px;
+  grid-template-areas:
+    "display display display  power "
+    "   .       .       .       .   "
+    " abre    fecha   apaga     CE  "
+    "  n7      n8      n9      mais "
+    "  n4      n5      n6      menos"
+    "  n1      n2      n3      mult "
+    "  n0     ponto   igual    divd ";
+}
+
+#calculadora-normal div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3em;
+  font-family: "Orbitron";
+}
+
+#calculadora-cientifica {
+  background-color: black;
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr 1fr;
+  grid-template-rows: 5fr 12px 2fr 4fr 4fr 4fr 4fr;
+  gap: 12px;
+  padding: 12px;
+  grid-template-areas:
+    "display display display  power "
+    "   .       .       .       .   "
+    " abre    fecha   apaga     CE  "
+    "  n7      n8      n9      mais "
+    "  n4      n5      n6      menos"
+    "  n1      n2      n3      mult "
+    "  n0     ponto   igual    divd ";
+}
+
+#calculadora-cientifica div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3em;
+  font-family: "Orbitron";
+}
+
+#cndisplay,
+#ccdisplay {
+  grid-area: display;
+  font-size: 2em !important;
+}
+
+.calc-btn {
+  cursor: pointer;
+  box-shadow: inset -2px -2px 2px rgba(0, 0, 0, 0.459);
+  min-height: 38px;
+}
+
+.calc-btn::selection {
+  background-color: transparent;
+}
+
+.calc-btn:hover {
+  box-shadow: 0 0 5px blue, inset -2px -2px 2px rgba(0, 0, 0, 0.459);
+  transition: 0.1s;
+}
+
+.calc-btn:active {
+  box-shadow: 0 0 5px blue, inset 2px 2px 2px rgba(0, 0, 0, 0.459);
+  padding: 2px 0 0 2px;
+}
+
+/* ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ */
+/* ▲▼▲▼▲▼▲▼▲▼▲▼▲▼  Botões Normal  ▼▲▼▲▼▲▼▲▼▲▼▲▼ */
+/* ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ */
+
+#cnpower {
+  grid-area: power;
+}
+#cnabre {
+  grid-area: abre;
+}
+#cnfecha {
+  grid-area: fecha;
+}
+#cnapaga {
+  grid-area: apaga;
+}
+#cnlimpar {
+  grid-area: CE;
+}
+#cn0 {
+  grid-area: n0;
+}
+#cn1 {
+  grid-area: n1;
+}
+#cn2 {
+  grid-area: n2;
+}
+#cn3 {
+  grid-area: n3;
+}
+#cn4 {
+  grid-area: n4;
+}
+#cn5 {
+  grid-area: n5;
+}
+#cn6 {
+  grid-area: n6;
+}
+#cn7 {
+  grid-area: n7;
+}
+#cn8 {
+  grid-area: n8;
+}
+#cn9 {
+  grid-area: n9;
+}
+#cnponto {
+  grid-area: ponto;
+}
+#cnigual {
+  grid-area: igual;
+}
+#cnmais {
+  grid-area: mais;
+}
+#cnmenos {
+  grid-area: menos;
+}
+#cnmult {
+  grid-area: mult;
+}
+#cndivd {
+  grid-area: divd;
+}
+
+#calculadora-normal div {
+  background-color: aliceblue;
+}
+
+#calculadora-cientifica {
+  background-color: black;
+}
+
+/* ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ */
+/* ▲▼▲▼▲▼▲▼▲▼  Botões Cientifica  ▼▲▼▲▼▲▼▲▼▲▼▲▼ */
+/* ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ */
+
+#cnpower {
+  grid-area: power;
+}
+#cnabre {
+  grid-area: abre;
+}
+#cnfecha {
+  grid-area: fecha;
+}
+#cnapaga {
+  grid-area: apaga;
+}
+#cnlimpar {
+  grid-area: CE;
+}
+#cn0 {
+  grid-area: n0;
+}
+#cn1 {
+  grid-area: n1;
+}
+#cn2 {
+  grid-area: n2;
+}
+#cn3 {
+  grid-area: n3;
+}
+#cn4 {
+  grid-area: n4;
+}
+#cn5 {
+  grid-area: n5;
+}
+#cn6 {
+  grid-area: n6;
+}
+#cn7 {
+  grid-area: n7;
+}
+#cn8 {
+  grid-area: n8;
+}
+#cn9 {
+  grid-area: n9;
+}
+#cnponto {
+  grid-area: ponto;
+}
+#cnigual {
+  grid-area: igual;
+}
+#cnmais {
+  grid-area: mais;
+}
+#cnmenos {
+  grid-area: menos;
+}
+#cnmult {
+  grid-area: mult;
+}
+#cndivd {
+  grid-area: divd;
+}
