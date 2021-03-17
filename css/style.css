@@ -1,0 +1,12 @@
+.cores-dia {
+  --cor-primaria-suave: #e7545b;
+}
+
+.cores-noite {
+  --cor-primaria-suave: #7b54e7;
+}
+
+div {
+  margin: 5px;
+  background-color: var(--cor-primaria-suave);
+}
