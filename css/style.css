@@ -28,52 +28,45 @@
 }
 
 .fonte-normal {
-  font-size: 1em;
+  font-size: 1.1em;
 }
 
 .fonte-grande {
-  font-size: 1.5em;
+  font-size: 1.4em;
 }
 
 /* --------------------- */
 
+body {
+  color: var(--cor-texto-normal);
+}
+
 header {
   height: 80px;
   background-color: var(--cor-fundo-escura);
+}
+
+#header-conteudo {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: var(--largura-meio);
+  max-width: var(--largura-maxima);
+  margin: auto;
 }
 
-#quem-somos-fundo {
-  background-color: var(--cor-fundo-clara);
-  height: calc(100vh - 80px);
+header img {
+  height: 80px;
 }
 
-#quem-somos {
-}
-
-#calculadora-fundo {
-  background-color: var(--cor-fundo-normal);
-  height: 400px;
-}
-
-#cadastro-fundo {
-  background-color: var(--cor-fundo-clara);
-  height: 400px;
-}
-
-#conversor-fundo {
-  background-color: var(--cor-fundo-normal);
-  height: 400px;
-}
-
-#equipe-fundo {
-  background-color: var(--cor-fundo-clara);
-  height: 400px;
+main {
+  min-height: calc(100vh - 160px);
 }
 
 footer {
   background-color: var(--cor-fundo-escura);
   height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
