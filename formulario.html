@@ -22,8 +22,8 @@
     <link rel='stylesheet' type='text/css' media='screen' href='css/formulario.css'>
 
     <!-- ▲▼▲▼▲▼▲▼ Scripts ▲▼▲▼▲▼▲▼ -->
-    <script src="js/formulario.js"></script>
     <script src="js/coresefonte.js"></script>
+    <script src="js/formulario.js"></script>
 
 </head>
 
@@ -43,14 +43,19 @@
         <main>
             <div>
                 <div id="fundo-titulo">
-                    <h1>Cadastro</h1>
+                    <div id="meio-titulo">
+                        <h1>Cadastro</h1>
+                        <P>Preencha abaixo o formulário de contato para que possamos entender melhor suas necessidades
+                            e
+                            retornar com a melhor proposta.</P>
+                    </div>
                 </div>
                 <div id="fundo-formulario">
                     <form id="formulario" action="">
                         <div id="box-name">
                             <label for="nome">Nome completo: </label>
                             <input type="text" name="nome" id="nome" placeholder="Nome completo"
-                                oninput="this.value = this.value.toUpperCase()">
+                                oninput="this.value = this.value.toUpperCase()" onblur="tiraBorda(this)">
                         </div>
                         <div id="box-cpf">
                             <label for="cpf">CPF: </label>
@@ -60,26 +65,28 @@
                             <div id="box-data1">
                                 <label for="dia">Dia: </label>
                                 <input type="number" name="dia" id="dia" min="1" max="31" placeholder="Dia"
-                                    onblur="valDia(this)">
+                                    onblur="valDia(this), tiraBorda(this)">
                             </div>
                             <div id="box-data2">
                                 <label for="mes">Mês: </label>
-                                <input list="meses" type="text" name="mes" id="mes" placeholder="Mês">
+                                <input list="meses" type="text" name="mes" id="mes" placeholder="Mês"
+                                    onblur="tiraBorda(this)">
                             </div>
                             <div id="box-data3">
                                 <label for="ano">Ano: </label>
                                 <input type="number" name="ano" id="ano" min="1891" max="2021" placeholder="Ano"
-                                    onblur="valAno(this)">
+                                    onblur="valAno(this), tiraBorda(this)">
                             </div>
                         </div>
                         <div id="mailbox">
                             <label for="email">E-mail: </label>
                             <input type="email" name="email" id="email" placeholder="E-mail"
-                                onblur="validacaoEmail(this)">
+                                onblur="validacaoEmail(this)" oninput="this.value=this.value.toLowerCase()">
                         </div>
                         <div id="box-sexo">
                             <label for="sexo">Sexo: </label>
-                            <input list="sexos" type="text" name="sexo" id="sexo" placeholder="Sexo">
+                            <input list="sexos" type="text" name="sexo" id="sexo" placeholder="Sexo"
+                                onblur="tiraBorda(this)">
                         </div>
 
                         <datalist id="meses">

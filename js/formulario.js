@@ -1,19 +1,16 @@
-
-
-
-
-
-
-
-
-
 // ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ //
 // ▲▼▲▼▲▼▲▼▲ Validar Dados ▲▼▲▼▲▼▲▼▲ //
 // ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ //
 
 function validacaoEmail(field) {
+
+    if (field == undefined){
+        field = document.getElementById("email");
+    }
+
     if (field.value == ''){
-        return
+        document.getElementById("email").style.boxShadow = "0 0 6px red, inset 0 0 3px red";
+        return false
     }
     usuario = field.value.substring(0, field.value.indexOf("@"));
     dominio = field.value.substring(field.value.indexOf("@")+ 1, field.value.length);
@@ -26,25 +23,28 @@ function validacaoEmail(field) {
         (dominio.search(".")!=-1) &&
         (dominio.indexOf(".") >=1)&&
         (dominio.lastIndexOf(".") < dominio.length - 1)) {
-    document.getElementById("email").innerHTML="E-mail válido";
+    document.getElementById("email").style.boxShadow = "";
     /* alert("E-mail válido"); */
     } else {
-    document.getElementById("email").innerHTML="<font color='red'>E-mail inválido </font>";
+    document.getElementById("email").style.boxShadow = "0 0 6px red, inset 0 0 3px red";
     alert("E-mail inválido");
     }
+    return true
 }
 
 function VerificaCPF() {
-    strCpf = document.getElementById('cpf').value;
-    
+    let strCpf = document.getElementById('cpf').value;
+
     var soma = 0;
     var resto;
-    
-    if (strfCpf = '')
-        return
+    if (strCpf == ''){
+        document.getElementById("cpf").style.boxShadow = "0 0 6px red, inset 0 0 3px red";
+        return false
+    }
 
     if (strCpf == "00000000000" || strCpf.length != 11) {
-        alert("CPF Inválido");
+        //alert("CPF Inválido");
+        document.getElementById("cpf").style.boxShadow = "0 0 6px red, inset 0 0 3px red";
         return false;
     }
 
@@ -78,12 +78,14 @@ function VerificaCPF() {
     } else {
         resto = 11 - resto;
     }
-    
+
     if (resto != parseInt(strCpf.substring(10, 11))) {
-        alert("CPF Inválido");
+        //alert("CPF Inválido");
+        document.getElementById("cpf").style.boxShadow = "0 0 6px red, inset 0 0 3px red";
         return false;
     }
-    alert("CPF VÁLIDO");
+    //alert("CPF VÁLIDO");
+    document.getElementById("cpf").style.boxShadow = "";
     return true;
 }
 
@@ -96,15 +98,56 @@ function msgCPF() {
     }
 }
 
+function tiraBorda(elem){
 
+    elem.style.boxShadow = "";
+}
+
+function teste(){
+    alert("2")
+}
 
 function frase() {
     var nome = document.getElementById('nome').value;
     var email = document.getElementById('email').value;
     var sexo = document.getElementById('sexo').value;
     var cpf = document.getElementById('cpf').value;
-    /* CALCULO DE IDADE */
     var mes = document.getElementById('mes').value;
+    var dia = document.getElementById('dia').value;
+    var ano = document.getElementById('ano').value;
+
+    // Verificamos se existe algum campo invalido e retornamos o erro se sim
+    let erro = false;
+    if (!VerificaCPF()){
+        erro = true
+    }
+    if (!validacaoEmail()){
+        erro = true
+    }
+    if(nome == ""){
+        document.getElementById('nome').style.boxShadow = "0 0 6px red, inset 0 0 3px red";
+        erro = true
+    }
+    if(sexo == ""){
+        document.getElementById('sexo').style.boxShadow = "0 0 6px red, inset 0 0 3px red";
+        erro = true
+    }
+    if(dia == ""){
+        document.getElementById('dia').style.boxShadow = "0 0 6px red, inset 0 0 3px red";
+        erro = true
+    }
+    if(mes == ""){
+        document.getElementById('mes').style.boxShadow = "0 0 6px red, inset 0 0 3px red";
+        erro = true
+    }
+    if(ano == ""){
+        document.getElementById('ano').style.boxShadow = "0 0 6px red, inset 0 0 3px red";
+        erro = true
+    }
+    if (erro){
+        return
+    }
+    /* CALCULO DE IDADE */
     switch(mes) {
         case 'janeiro' : var mesNum = 0; break;
         case 'fevereiro' : var mesNum = 1; break;
@@ -119,8 +162,6 @@ function frase() {
         case 'novembro' : var mesNum = 10; break;
         case 'dezembro' : var mesNum = 11; break;
     }
-    var dia = document.getElementById('dia').value;
-    var ano = document.getElementById('ano').value;
 
     var nasc = new Date(ano, mesNum, dia);
 
@@ -130,14 +171,14 @@ function frase() {
     /* FIM DO CÁLCULO*/
     if (idade > 130 || idade < 0 || isNaN(idade)) {
         alert('Idade inválida!');
-    } else {    
+    } else {
         document.getElementById('mensagem').innerHTML = `Olá <strong>${nome}</strong>, seu login é <strong>${email}</strong>, você tem <strong>${idade}</strong> anos, se define como uma pessoa do sexo <strong>${sexo}</strong> e pode usar <strong>${cpf}</strong> como senha.`;
     }
 }
 
 function valDia(valor) {
     let numero = valor.value;
-    if (numero == '') {        
+    if (numero == '') {
         return
     } else if (numero > 31 || numero < 1) {
         alert('Dia inválido!');
