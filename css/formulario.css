@@ -1,16 +1,3 @@
-/*
-var(--cor-acento-suave);
-var(--cor-acento-normal);
-var(--cor-acento-forte);
-var(--cor-fundo-clara);
-var(--cor-fundo-normal);
-var(--cor-fundo-escura);
-var(--cor-texto-clara);
-var(--cor-texto-normal);
-var(--cor-texto-escura);
-
-*/
-
 #fundo-titulo {
   width: 100%;
   background-color: var(--cor-fundo-claraX);

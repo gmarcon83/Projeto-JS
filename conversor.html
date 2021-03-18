@@ -22,75 +22,89 @@
     <link rel='stylesheet' type='text/css' media='screen' href='css/conversor.css'>
 
     <!-- ▲▼▲▼▲▼▲▼ Scripts ▲▼▲▼▲▼▲▼ -->
-    <script src="js/conversor.js">
-        /*A.Criar uma pagina de conversão de moedas
-            B.Utilizar as moedas (dólar americano , dólar canadense , Real brasileiro , Euro , Libra
-            e peso argentino
-            C. Considerar mercado comercial fechamento dia 16/03/2021
-            D. Usuário não pode digitar numero negativo ou letras em caso de erro de digitação
-            enviar um alert
-        */
-    </script>
-
+    <script src="js/conversor.js"></script>
+    <script src="js/coresefonte.js"></script>
 
 </head>
 
-<body class="cores-dia">
-    <div id="grande">
-        <h1>Conversão de moedas</h1>
-
-        <div id="aqui">
-            <div id="esquerda">
-                <b><label id="primeiraopção">Converter de: </label></b><br />
-                <select id="opcao1">
-                    <option>Selecione uma opção</option>
-                    <option value="5.584">Dólar Americano</option>
-                    <option value="4.496">Dólar Canadense</option>
-                    <option value="4.352">Dólar Australiano</option>
-                    <option value="1">Real</option>
-                    <option value="6.733">Euro</option>
-                    <option value="7.854">Libra</option>
-                    <option value="0.0607">Peso Argentino</option>
-                </select><br />
+<body id="body" class="cores-dia">
+    <div id="tamanho-fonte" class="fonte-normal">
+        <header>
+            <div id="header-conteudo">
+                <a href="index.html"><img src="img/gmg-logo.png" alt="Logo marca GMG"></a>
+                <div>
+                    <button onclick="trocarTema()">Trocar Cor</button>
+                    <button onclick="trocarFonte()">Trocar Fonte</button>
+                </div>
             </div>
-        </div>
-        <br>
-        <div id="direita">
-            <b><label id="segundaooção">Converter para: </label></b><br />
-            <select id="opcao2">
-                <option>Selecione uma opção</option>
-                <option value="0.179">Dólar Americano</option>
-                <option value="0.222">Dólar Canadense</option>
-                <option value="0.229">Dólar Australiano</option>
-                <option value="1">Real</option>
-                <option value="0.148">Euro</option>
-                <option value="0.127">Libra</option>
-                <option value="16.666">Peso Argentino</option>
-            </select><br />
-        </div>
-        
-        
-        <div id="val">
-            <div id="h3">
-                <h3>Valor a ser convertido:</h3>
+        </header>
+        <main>
+            <div id="fundo-titulo">
+                <div id="meio-titulo">
+                    <h1>Cadastro</h1>
+                    <P>Preencha abaixo o formulário de contato para que possamos entender melhor suas necessidades
+                        e
+                        retornar com a melhor proposta.</P>
+                </div>
             </div>
-            <div id="barra">
-                <input id="input" onblur="valinput(this)" placeholder="Digite um valor $">
+            <div id="grande">
+                <h1>Conversão de moedas</h1>
+                <div id=campos-moedas>
+                    <div id="aqui">
+                        <div id="esquerda">
+                            <b><label id="primeiraopção">Converter de: </label></b><br />
+                            <select id="opcao1">
+                                <option>Selecione uma opção</option>
+                                <option value="5.584">Dólar Americano</option>
+                                <option value="4.496">Dólar Canadense</option>
+                                <option value="4.352">Dólar Australiano</option>
+                                <option value="1">Real</option>
+                                <option value="6.733">Euro</option>
+                                <option value="7.854">Libra</option>
+                                <option value="0.0607">Peso Argentino</option>
+                            </select><br />
+                        </div>
+                    </div>
+                    <div id="direita">
+                        <b><label id="segundaooção">Converter para: </label></b><br />
+                        <select id="opcao2">
+                            <option>Selecione uma opção</option>
+                            <option value="0.179">Dólar Americano</option>
+                            <option value="0.222">Dólar Canadense</option>
+                            <option value="0.229">Dólar Australiano</option>
+                            <option value="1">Real</option>
+                            <option value="0.148">Euro</option>
+                            <option value="0.127">Libra</option>
+                            <option value="16.666">Peso Argentino</option>
+                        </select><br />
+                    </div>
+
+                    <div id="val">
+                        <div id="h3">
+                            <h3>Valor a ser convertido:</h3>
+                        </div>
+                        <div id="barra">
+                            <input id="input" type="number" min="0" step="1" onblur="valinput(this)"
+                                placeholder="Digite um valor $">
+                        </div>
+                    </div>
+                </div>
+                <div id="campos-resultado">
+                    <div id="div4">
+                        <p id="resultado"><strong>Resultado:</strong></p>
+                        <input id="barraresultado" readonly>
+                    </div>
+
+                    <div id="botao">
+                        <input type="button" value="Converter" id="btn1" onclick="converter()" />
+                    </div>
+                </div>
             </div>
-        </div>
-        <!-- <button id="button">Converter</button> -->
-        <div id="botao">
-            <input type="button" value="Converter" id="btn1" onclick="converter()" />
-        </div>
-     
-        <div id="div4">
-            <p id="resultado"><strong>Resultado:</strong></p>
-            <input id="barraresultado">
-        </div>
-
-
+        </main>
+        <footer>
+            <small>GMG Soluções Digitais© - 2021</small>
+        </footer>
     </div>
-
 
 </body>
 
