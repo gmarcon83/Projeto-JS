@@ -34,9 +34,11 @@ h6 {
   --cor-acento-suave: #5957e7;
   --cor-acento-normal: #3431f1;
   --cor-acento-forte: #0e0ae7;
-  --cor-fundo-clara: #e0ebf6;
+  --cor-fundo-claraX: #eef6ff;
+  --cor-fundo-clara: #d8e6f5;
   --cor-fundo-normal: #c7d6e4;
   --cor-fundo-escura: #b0bbc5;
+  --cor-fundo-escuraX: #282e33;
   --cor-texto-clara: #222;
   --cor-texto-normal: #111;
   --cor-texto-escura: #000;
@@ -46,9 +48,11 @@ h6 {
   --cor-acento-suave: #5957e7;
   --cor-acento-normal: #3431f1;
   --cor-acento-forte: #0e0ae7;
+  --cor-fundo-claraX: #4b5d6e;
   --cor-fundo-clara: #253341;
   --cor-fundo-normal: #192734;
   --cor-fundo-escura: #15202b;
+  --cor-fundo-escuraX: #0b1016;
   --cor-texto-clara: #fff;
   --cor-texto-normal: #eee;
   --cor-texto-escura: #ddd;

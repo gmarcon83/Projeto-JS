@@ -89,8 +89,8 @@ function botao(botao){
     }
     // Limita o numero de caracteres, dependendo da calculadora
     let expFinal = botao.parentElement.childNodes[1].innerHTML += codBotao
-    if (padrao && expFinal.length > 10)
-        expFinal = expFinal.substr(0, 10)
+    if (padrao && expFinal.length > 11)
+        expFinal = expFinal.substr(0, 11)
     else (!padrao && expFinal.length > 14)
         expFinal = expFinal.substr(0, 14)
     // Pega o display da calculadora e adiciona o codigo tratado
