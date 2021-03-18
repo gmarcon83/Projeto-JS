@@ -22,12 +22,73 @@
     <link rel='stylesheet' type='text/css' media='screen' href='css/conversor.css'>
 
     <!-- ▲▼▲▼▲▼▲▼ Scripts ▲▼▲▼▲▼▲▼ -->
-    <script src="js/conversor.js"></script>
+    <script src="js/conversor.js">
+        /*A.Criar uma pagina de conversão de moedas
+            B.Utilizar as moedas (dólar americano , dólar canadense , Real brasileiro , Euro , Libra
+            e peso argentino
+            C. Considerar mercado comercial fechamento dia 16/03/2021
+            D. Usuário não pode digitar numero negativo ou letras em caso de erro de digitação
+            enviar um alert
+        */
+    </script>
+
 
 </head>
 
 <body>
+    <div id="grande">
+        <h1>Conversão de moedas</h1>
 
+        <div id="aqui">
+            <div id="esquerda" >
+                <b><label id="primeiraopção">Converter de: </label></b><br />
+                <select id="opcao1">
+                    <option>Selecione uma opção</option>
+                    <option value="5.584">Dólar Americano</option>
+                    <option value="4.496">Dólar Canadense</option>
+                    <option value="4.352">Dólar Australiano</option>
+                    <option value="1">Real</option>
+                    <option value="6.733">Euro</option>
+                    <option value="7.854">Libra</option>
+                    <option value="0.0607">Peso Argentino</option>
+                </select><br />
+            </div>
+        </div>
+
+        <div id="direita">
+            <b><label id="segundaooção">Converter para: </label></b><br />
+            <select id="opcao2">
+                <option >Selecione uma opção</option>
+                    <option value="0.179">Dólar Americano</option>
+                    <option value="0.222">Dólar Canadense</option>
+                    <option value="0.229">Dólar Australiano</option>
+                    <option value="1">Real</option>
+                    <option value="0.148">Euro</option>
+                    <option value="0.127">Libra</option>
+                    <option value="16.666">Peso Argentino</option>
+            </select><br />
+        </div>
+        </br>
+        <div id="val">
+            <div id="h3">
+                <h3>Valor a ser convertido:</h3>
+            </div>
+            <div id="barra">
+                <input id="input" onblur="valinput(this)" placeholder="Digite um valor $">
+            </div>
+        </div>
+        <!-- <button id="button">Converter</button> --> 
+        <input type="button" value="Converter" id="btn1" onclick="converter()" />
+
+        <div id="div4">
+            <label id="resultado">Resultado:</label><br />
+            <input id="barraresultado">
+            
+        </div>
+        
+
+    </div>
+    
 </body>
 
 </html>
