@@ -1,0 +1,40 @@
+#grande{
+    background-color: #1a7dd099;
+    padding: 23px;
+    height: 477px;
+    margin-left: 56px;
+    width: 33%;
+    border-radius: 61px 64px;
+
+}
+#botao{
+    float: right;
+    width: 46%;
+}
+#resultado{
+    float: left;
+}
+#val{
+    float: left;
+}
+#btn1{
+    border-radius: 10px 10px;
+    background: #3041a087;
+    margin-top: 62px;
+    border-style: none;
+    width: 52%;
+}
+
+#div4{
+    text-align: center;
+    width: 88%;
+    margin-top: 38px;
+    float: right;
+}
+
+#barraresultado{
+    float: right;
+    margin-top: 9px;
+    width: 49%;
+    margin-right: 97px;
+}
