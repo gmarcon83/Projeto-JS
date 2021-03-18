@@ -22,8 +22,7 @@
     <link rel='stylesheet' type='text/css' media='screen' href='css/calculadora.css'>
 
     <!-- ▲▼▲▼▲▼▲▼ Link Fonts Awesome ▲▼▲▼▲▼▲▼ -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
-        integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/5cf15c459a.js" crossorigin="anonymous"></script>
 
     <!-- ▲▼▲▼▲▼▲▼ Scripts ▲▼▲▼▲▼▲▼ -->
     <script src="js/calculadora.js"></script>
@@ -44,56 +43,58 @@
             <div id="calculadoras">
                 <div id="calculadora-normal">
                     <div class="calc-cient " id="cndisplay">125+39</div>
-                    <div class="calc-cient calc-btn" id="cnpower"><i class="fas fa-power-off"></i></div>
-                    <div class="calc-cient calc-btn calc-outros" id="cnabre">(</div>
-                    <div class="calc-cient calc-btn calc-outros" id="cnfecha">)</div>
-                    <div class="calc-cient calc-btn calc-outros" id="cnapaga">←</div>
-                    <div class="calc-cient calc-btn calc-outros" id="cnlimpar">CE</div>
-                    <div class="calc-cient calc-btn calc-principal" id="cn0">0</div>
-                    <div class="calc-cient calc-btn calc-principal" id="cn1">1</div>
-                    <div class="calc-cient calc-btn calc-principal" id="cn2">2</div>
-                    <div class="calc-cient calc-btn calc-principal" id="cn3">3</div>
-                    <div class="calc-cient calc-btn calc-principal" id="cn4">4</div>
-                    <div class="calc-cient calc-btn calc-principal" id="cn5">5</div>
-                    <div class="calc-cient calc-btn calc-principal" id="cn6">6</div>
-                    <div class="calc-cient calc-btn calc-principal" id="cn7">7</div>
-                    <div class="calc-cient calc-btn calc-principal" id="cn8">8</div>
-                    <div class="calc-cient calc-btn calc-principal" id="cn9">9</div>
-                    <div class="calc-cient calc-btn calc-principal" id="cnponto">.</div>
-                    <div class="calc-cient calc-btn calc-principal" id="cnigual">=</div>
-                    <div class="calc-cient calc-btn calc-outros" id="cnmais">+</div>
-                    <div class="calc-cient calc-btn calc-outros" id="cnmenos">-</div>
-                    <div class="calc-cient calc-btn calc-outros" id="cnmult">x</div>
-                    <div class="calc-cient calc-btn calc-outros" id="cndivd">÷</div>
+                    <div onclick="power('padrao')" class="calc-cient calc-btn" id="cnpower"><i
+                            class="fas fa-power-off"></i></div>
+                    <div onclick="botao(this)" class="calc-cient calc-btn calc-outros" id="cnabre">(</div>
+                    <div onclick="botao(this)" class="calc-cient calc-btn calc-outros" id="cnfecha">)</div>
+                    <div onclick="botao(this)" class="calc-cient calc-btn calc-outros" id="cnapaga">←</div>
+                    <div onclick="botao(this)" class="calc-cient calc-btn calc-outros" id="cnlimpar">CE</div>
+                    <div onclick="botao(this)" class="calc-cient calc-btn calc-principal" id="cn0">0</div>
+                    <div onclick="botao(this)" class="calc-cient calc-btn calc-principal" id="cn1">1</div>
+                    <div onclick="botao(this)" class="calc-cient calc-btn calc-principal" id="cn2">2</div>
+                    <div onclick="botao(this)" class="calc-cient calc-btn calc-principal" id="cn3">3</div>
+                    <div onclick="botao(this)" class="calc-cient calc-btn calc-principal" id="cn4">4</div>
+                    <div onclick="botao(this)" class="calc-cient calc-btn calc-principal" id="cn5">5</div>
+                    <div onclick="botao(this)" class="calc-cient calc-btn calc-principal" id="cn6">6</div>
+                    <div onclick="botao(this)" class="calc-cient calc-btn calc-principal" id="cn7">7</div>
+                    <div onclick="botao(this)" class="calc-cient calc-btn calc-principal" id="cn8">8</div>
+                    <div onclick="botao(this)" class="calc-cient calc-btn calc-principal" id="cn9">9</div>
+                    <div onclick="botao(this)" class="calc-cient calc-btn calc-principal" id="cnponto">.</div>
+                    <div onclick="botao(this)" class="calc-cient calc-btn calc-principal" id="cnigual">=</div>
+                    <div onclick="botao(this)" class="calc-cient calc-btn calc-outros" id="cnmais">+</div>
+                    <div onclick="botao(this)" class="calc-cient calc-btn calc-outros" id="cnmenos">-</div>
+                    <div onclick="botao(this)" class="calc-cient calc-btn calc-outros" id="cnmult">x</div>
+                    <div onclick="botao(this)" class="calc-cient calc-btn calc-outros" id="cndivd">÷</div>
                 </div>
                 <div id="calculadora-cientifica">
                     <div class="cacl-cient" id="ccdisplay">125+39</div>
-                    <div class="cacl-cient calc-btn" id="ccpower"><i class="fas fa-power-off"></i></div>
-                    <div class="cacl-cient calc-btn calc-outros" id="ccabre">(</div>
-                    <div class="cacl-cient calc-btn calc-outros" id="ccfecha">)</div>
-                    <div class="cacl-cient calc-btn calc-outros" id="ccapaga">←</div>
-                    <div class="cacl-cient calc-btn calc-outros" id="cclimpar">CE</div>
-                    <div class="cacl-cient calc-btn calc-principal" id="cc0">0</div>
-                    <div class="cacl-cient calc-btn calc-principal" id="cc1">1</div>
-                    <div class="cacl-cient calc-btn calc-principal" id="cc2">2</div>
-                    <div class="cacl-cient calc-btn calc-principal" id="cc3">3</div>
-                    <div class="cacl-cient calc-btn calc-principal" id="cc4">4</div>
-                    <div class="cacl-cient calc-btn calc-principal" id="cc5">5</div>
-                    <div class="cacl-cient calc-btn calc-principal" id="cc6">6</div>
-                    <div class="cacl-cient calc-btn calc-principal" id="cc7">7</div>
-                    <div class="cacl-cient calc-btn calc-principal" id="cc8">8</div>
-                    <div class="cacl-cient calc-btn calc-principal" id="cc9">9</div>
-                    <div class="cacl-cient calc-btn calc-principal" id="ccponto">.</div>
-                    <div class="cacl-cient calc-btn calc-principal" id="ccigual">=</div>
-                    <div class="cacl-cient calc-btn calc-outros" id="ccmais">+</div>
-                    <div class="cacl-cient calc-btn calc-outros" id="ccmenos">-</div>
-                    <div class="cacl-cient calc-btn calc-outros" id="ccmult">x</div>
-                    <div class="cacl-cient calc-btn calc-outros" id="ccdivd">÷</div>
-                    <div class="cacl-cient calc-btn calc-outros" id="ccraiz"><i class="fas fa-square-root-alt"></i>
-                    </div>
-                    <div class="cacl-cient calc-btn calc-outros" id="ccquad">x²</div>
-                    <div class="cacl-cient calc-btn calc-outros" id="cccubo">x³</div>
-                    <div class="cacl-cient calc-btn calc-outros" id="ccpi">π</div>
+                    <div onclick="power('cientifica')" class="cacl-cient calc-btn" id="ccpower"><i
+                            class="fas fa-power-off"></i></div>
+                    <div onclick="botao(this)" class="cacl-cient calc-btn calc-outros" id="ccabre">(</div>
+                    <div onclick="botao(this)" class="cacl-cient calc-btn calc-outros" id="ccfecha">)</div>
+                    <div onclick="botao(this)" class="cacl-cient calc-btn calc-outros" id="ccapaga">←</div>
+                    <div onclick="botao(this)" class="cacl-cient calc-btn calc-outros" id="cclimpar">CE</div>
+                    <div onclick="botao(this)" class="cacl-cient calc-btn calc-principal" id="cc0">0</div>
+                    <div onclick="botao(this)" class="cacl-cient calc-btn calc-principal" id="cc1">1</div>
+                    <div onclick="botao(this)" class="cacl-cient calc-btn calc-principal" id="cc2">2</div>
+                    <div onclick="botao(this)" class="cacl-cient calc-btn calc-principal" id="cc3">3</div>
+                    <div onclick="botao(this)" class="cacl-cient calc-btn calc-principal" id="cc4">4</div>
+                    <div onclick="botao(this)" class="cacl-cient calc-btn calc-principal" id="cc5">5</div>
+                    <div onclick="botao(this)" class="cacl-cient calc-btn calc-principal" id="cc6">6</div>
+                    <div onclick="botao(this)" class="cacl-cient calc-btn calc-principal" id="cc7">7</div>
+                    <div onclick="botao(this)" class="cacl-cient calc-btn calc-principal" id="cc8">8</div>
+                    <div onclick="botao(this)" class="cacl-cient calc-btn calc-principal" id="cc9">9</div>
+                    <div onclick="botao(this)" class="cacl-cient calc-btn calc-principal" id="ccponto">.</div>
+                    <div onclick="botao(this)" class="cacl-cient calc-btn calc-principal" id="ccigual">=</div>
+                    <div onclick="botao(this)" class="cacl-cient calc-btn calc-outros" id="ccmais">+</div>
+                    <div onclick="botao(this)" class="cacl-cient calc-btn calc-outros" id="ccmenos">-</div>
+                    <div onclick="botao(this)" class="cacl-cient calc-btn calc-outros" id="ccmult">x</div>
+                    <div onclick="botao(this)" class="cacl-cient calc-btn calc-outros" id="ccdivd">÷</div>
+                    <div onclick="botao(this)" class="cacl-cient calc-btn calc-outros" id="ccpi">π</div>
+                    <div onclick="botao(this)" class="cacl-cient calc-btn calc-outros" id="ccraiz"><i
+                            class="fas fa-square-root-alt"></i></div>
+                    <div onclick="botao(this)" class="cacl-cient calc-btn calc-outros" id="ccquad">x²</div>
+                    <div onclick="botao(this)" class="cacl-cient calc-btn calc-outros" id="cccubo">x³</div>
                 </div>
             </div>
         </main>

@@ -1,3 +1,9 @@
+/* TODO:
+    - Limitar o número de caracteres em cada calculadora e adicionar
+      tamanho minimo para cada uma delas no CSS para ficar certo;
+    - Desativar de verdade o display da calculadora que não está ligada;
+*/
+
 var padrao = true;
 
 // Executa quando carrega a pagina
@@ -44,59 +50,78 @@ function ligarCalculadora(){
 function botao(botao){
     // Pega o cod do botão
     let codBotao = botao.innerHTML;
-    // Pega o display da calculadora
+    // Pega o que existe no display
+    let expExist = botao.parentElement.childNodes[1].innerHTML
 
-}
-
-
-
-
-
-
-
-// ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ //
-// ▲▼▲▼▲▼ Funções Matemáticas ▼▲▼▲▼▲ //
-// ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ //
-
-function somar(num1, num2){
-    let resultado = (num1 + num2);
-    return resultado;
-}
-
-function subtrair(num1, num2){
-    let resultado = (num1 - num2);
-    return resultado;
-}
-
-function multiplicar(num1, num2){
-    let resultado = (num1 * num2);
-    return resultado;
-}
-
-function dividir(num1, num2){
-    let resultado = (num1 / num2);
-    return resultado;
-}
-
-function fatorear(num1){
-    // Por definição  0! e 1! é 1.
-    if (num1 == 0 || num1 == 1)
-        return 1;
-    // Ou continua normalmente
-    let i = num1;
-        while (i > 1){
-        i--;
-        num1 = num1 * i;
+    // Limpamos o display caso a expressao anterior tenha dado erro
+    if (expExist == "ERRO"){
+        botao.parentElement.childNodes[1].innerHTML = "";
+        expExist = ""
     }
-    return num1;
+    // Tratamos os casos especiais
+    switch (codBotao){
+        case "=":
+            codBotao = calcular(expExist);
+            botao.parentElement.childNodes[1].innerHTML = "";
+            break;
+        // Essa linha é um sacrificio que temos que fazer pra ficar mais bonita
+        // a calculadora. Seria possivel usar √ no lugar.
+        case "<i class=\"fas fa-square-root-alt\" aria-hidden=\"true\"></i>":
+            codBotao = Math.sqrt(calcular(expExist));
+            botao.parentElement.childNodes[1].innerHTML = "";
+            break;
+        case "CE":
+            codBotao = ""
+            botao.parentElement.childNodes[1].innerHTML = "";
+            break;
+        case "←":
+            codBotao = expExist.slice(0, -1);
+            botao.parentElement.childNodes[1].innerHTML = "";
+            break;
+        case "x²":
+            codBotao = "²";
+            break;
+        case "x³":
+            codBotao = "³";
+            break;
+        case "π":
+            codBotao = "3.1415";
+            break;
+    }
+    // Pega o display da calculadora e adiciona o codigo tratado
+    botao.parentElement.childNodes[1].innerHTML += codBotao
+
 }
 
-function radiciar(num1){
-    num1 = Math.sqrt(num1);
-    return num1;
+function calcular(expressao){
+    // Transformamos a string para os caracteres que o JS entende. EX: x para *
+    expressao = trocar("x","*", expressao);
+    expressao = trocar("÷","/", expressao);
+    // Apenas da ciêntifica
+    if (!padrao){
+        expressao = trocar("²","**2", expressao);
+        expressao = trocar("³","**3", expressao);
+    }
+
+    // Caso não seja possivel resolver a expressão retornamos um erro,
+    try {
+        // Normalmente se usaria parse() mas não é recomendado devido a segurança
+        // então a recomendação da W3 é usar assim.
+        Function('"use strict";return (' + expressao + ')')();
+    } catch(err){
+        return "ERRO";
+    }
+    // Retornamos o valor calculado
+    return Function('"use strict";return (' + expressao + ')')();
 }
 
-function potenciar(num1, num2){
-    let resultado = (num1 ** num2);
-    return resultado;
+
+// Troca todos os carateres "orig" por "novo" na "expressao"
+function trocar(orig, novo, expressao){
+    let cont = 0 // Apenas uma segurança
+    while (expressao.includes(orig) && cont < 20){
+        expressao = expressao.replace(orig, novo);
+        cont++;
+    }
+    return expressao;
 }
