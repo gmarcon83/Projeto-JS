@@ -6,10 +6,7 @@
 
 var padrao = true;
 
-// Executa quando carrega a pagina
-window.onload = function(){
-    ligarCalculadora();
-}
+
 
 function power(calc){
     // Determina qual queremos ligar, se apertarmos em uma

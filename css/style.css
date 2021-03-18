@@ -1,3 +1,30 @@
+/* Typografia */
+
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;300;400;700;900&family=Montserrat:ital,wght@0,300;0,500;0,700;0,900;1,400&display=swap");
+
+body {
+  font-family: "Alegreya Sans";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat";
+}
+
+.fonte-normal {
+  font-size: 1.1em;
+}
+
+.fonte-grande {
+  font-size: 1.4em;
+}
+
+/* Variáveis básicas */
+
 :root {
   --largura-meio: 90%;
   --largura-maxima: 1400px;
@@ -25,14 +52,6 @@
   --cor-texto-clara: #fff;
   --cor-texto-normal: #eee;
   --cor-texto-escura: #ddd;
-}
-
-.fonte-normal {
-  font-size: 1.1em;
-}
-
-.fonte-grande {
-  font-size: 1.4em;
 }
 
 /* --------------------- */
