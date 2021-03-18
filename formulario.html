@@ -23,6 +23,7 @@
 
     <!-- ▲▼▲▼▲▼▲▼ Scripts ▲▼▲▼▲▼▲▼ -->
     <script src="js/formulario.js"></script>
+    <script src="js/coresefonte.js"></script>
 
 </head>
 
@@ -30,72 +31,82 @@
     <div id="tamanho-fonte" class="fonte-normal">
         <header>
             <div id="header-conteudo">
-                <img src="img/gmg-logo.png" alt="Logo marca GMG">
-                <div>
-
-                </div>
-            </div>
+                <div id="header-conteudo">
+                    <a href="index.html"><img src="img/gmg-logo.png" alt="Logo marca GMG"></a>
+                    <div>
+                        <div>
+                            <button onclick="trocarTema()">Trocar Cor</button>
+                            <button onclick="trocarFonte()">Trocar Fonte</button>
+                        </div>
+                    </div>
         </header>
         <main>
             <div>
-                <h1>Cadastro</h1>
-                <form id="formulario" action="">
-                    <div id="box-name">
-                        <label for="nome">Nome completo: </label>
-                        <input type="text" name="nome" id="nome" placeholder="Nome completo" oninput="this.value = this.value.toUpperCase()">
-                    </div>
-                    <div id="box-cpf">
-                        <label for="cpf">CPF: </label>
-                        <input type="text" name="cpf" id="cpf" placeholder="CPF" onblur="VerificaCPF()">
-                    </div>
-                    <div id="box-data">
-                    <div id="box-data1">
-                    <label for="dia">Dia: </label>
-                    <input type="number" name="dia" id="dia" min="1" max="31" placeholder="Dia" onblur="valDia(this)">
-                    </div>
-                    <div id="box-data2">
-                    <label for="mes">Mês: </label>
-                    <input list="meses" type="text" name="mes" id="mes" placeholder="Mês">        
-                    </div>
-                    <div id="box-data3">
-                    <label for="ano">Ano: </label>
-                    <input type="number" name="ano" id="ano" min="1891" max="2021" placeholder="Ano" onblur="valAno(this)">
-                    </div>
-                    </div>
-                    <div id="mailbox">                                       
-                    <label for="email">E-mail: </label>
-                    <input type="email" name="email" id="email" placeholder="E-mail" onblur="validacaoEmail(this)">
-                    </div>
-                    <div  id="box-sexo">
-                    <label for="sexo">Sexo: </label>
-                    <input list="sexos" type="text" name="sexo" id="sexo" placeholder="Sexo">
-                    </div>
-                    
-                    <datalist id="meses">
-                        <option value="janeiro"></option>
-                        <option value="fevereiro"></option>
-                        <option value="março"></option>
-                        <option value="abril"></option>
-                        <option value="maio"></option>
-                        <option value="junho"></option>
-                        <option value="julho"></option>
-                        <option value="agosto"></option>
-                        <option value="setembro"></option>
-                        <option value="outubro"></option>
-                        <option value="novembro"></option>
-                        <option value="dezembro"></option>
-                    </datalist>
-
-                    <datalist id="sexos">
-                        <option value="feminino"></option>
-                        <option value="masculino"></option>
-                        <option value="não informado"></option>
-                    </datalist>
-                </form>
-                <div id="btt-box">
-                    <button onclick="frase()">cadastrar</button>
+                <div id="fundo-titulo">
+                    <h1>Cadastro</h1>
                 </div>
-                
+                <div id="fundo-formulario">
+                    <form id="formulario" action="">
+                        <div id="box-name">
+                            <label for="nome">Nome completo: </label>
+                            <input type="text" name="nome" id="nome" placeholder="Nome completo"
+                                oninput="this.value = this.value.toUpperCase()">
+                        </div>
+                        <div id="box-cpf">
+                            <label for="cpf">CPF: </label>
+                            <input type="text" name="cpf" id="cpf" placeholder="CPF" onblur="VerificaCPF()">
+                        </div>
+                        <div id="box-data">
+                            <div id="box-data1">
+                                <label for="dia">Dia: </label>
+                                <input type="number" name="dia" id="dia" min="1" max="31" placeholder="Dia"
+                                    onblur="valDia(this)">
+                            </div>
+                            <div id="box-data2">
+                                <label for="mes">Mês: </label>
+                                <input list="meses" type="text" name="mes" id="mes" placeholder="Mês">
+                            </div>
+                            <div id="box-data3">
+                                <label for="ano">Ano: </label>
+                                <input type="number" name="ano" id="ano" min="1891" max="2021" placeholder="Ano"
+                                    onblur="valAno(this)">
+                            </div>
+                        </div>
+                        <div id="mailbox">
+                            <label for="email">E-mail: </label>
+                            <input type="email" name="email" id="email" placeholder="E-mail"
+                                onblur="validacaoEmail(this)">
+                        </div>
+                        <div id="box-sexo">
+                            <label for="sexo">Sexo: </label>
+                            <input list="sexos" type="text" name="sexo" id="sexo" placeholder="Sexo">
+                        </div>
+
+                        <datalist id="meses">
+                            <option value="janeiro"></option>
+                            <option value="fevereiro"></option>
+                            <option value="março"></option>
+                            <option value="abril"></option>
+                            <option value="maio"></option>
+                            <option value="junho"></option>
+                            <option value="julho"></option>
+                            <option value="agosto"></option>
+                            <option value="setembro"></option>
+                            <option value="outubro"></option>
+                            <option value="novembro"></option>
+                            <option value="dezembro"></option>
+                        </datalist>
+
+                        <datalist id="sexos">
+                            <option value="feminino"></option>
+                            <option value="masculino"></option>
+                            <option value="não informado"></option>
+                        </datalist>
+                    </form>
+                    <div id="btt-box">
+                        <button onclick="frase()">cadastrar</button>
+                    </div>
+                </div>
                 <div id="mensagem"></div>
             </div>
         </main>
