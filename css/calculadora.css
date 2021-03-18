@@ -12,6 +12,7 @@ main {
   grid-template-columns: 5fr 6fr;
   gap: 20px;
   padding: 20px;
+  color: black;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -58,9 +59,9 @@ main {
     "   .       .       .      .       .   "
     " abre    fecha   apaga    CE      CE  "
     "  n7      n8      n9     mais    raiz "
-    "  n4      n5      n6     menos   quad "
-    "  n1      n2      n3     mult    cubo "
-    "  n0     ponto   igual   divd     pi  ";
+    "  n4      n5      n6     menos    pi  "
+    "  n1      n2      n3     mult    quad "
+    "  n0     ponto   igual   divd    cubo ";
 }
 
 #calculadora-cientifica div,
