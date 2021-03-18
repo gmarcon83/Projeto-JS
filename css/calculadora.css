@@ -1,33 +1,41 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
 
-main {
-  width: var(--largura-meio);
-  max-width: var(--largura-maxima);
-  margin: auto;
+#calculadoras-fundo {
+  width: 100%;
+  background-color: var(--cor-fundo-normal);
+  min-height: calc(100vh - 160px);
 }
+
+/* ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ */
+/* ▲▼▲▼▲▼▲▼▲▼▲▼▲▼  Calculadoras  ▲▼▲▼▲▼▲▼▲▼▲▼▲▼ */
+/* ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ */
 
 #calculadoras {
   display: grid;
+  max-width: var(--largura-maxima);
+  margin: auto;
   justify-items: center;
   grid-template-columns: 5fr 6fr;
   gap: 20px;
   padding: 20px;
-  color: black;
+  color: var(--cor-texto-normal);
+  background-color: transparent;
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1280px) {
   #calculadoras {
     grid-template-columns: 1fr;
   }
 }
 
 #calculadora-normal {
-  background-color: black;
+  background-color: var(--cor-fundo-escuraX);
   box-shadow: 1px 1px 1px black;
   border-radius: 4px;
   display: grid;
   justify-items: stretch;
   width: 100%;
+  min-width: 500px;
   max-width: 610px;
   grid-template-columns: 2fr 2fr 2fr 1fr;
   grid-template-rows: 5fr 12px 46px 4fr 4fr 4fr 4fr;
@@ -44,10 +52,11 @@ main {
 }
 
 #calculadora-cientifica {
-  background-color: black;
+  background-color: var(--cor-fundo-escuraX);
   box-shadow: 1px 1px 1px black;
   border-radius: 4px;
   width: 100%;
+  min-width: 650px;
   max-width: 735px;
   display: grid;
   grid-template-columns: 2fr 2fr 2fr 1fr 1fr;
@@ -77,10 +86,16 @@ main {
 #cndisplay,
 #ccdisplay {
   border-radius: 0px !important;
+  color: black;
   box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.377);
   grid-area: display;
   font-size: 2em !important;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.322);
+}
+
+#cndisplay::selection,
+#ccdisplay::selection {
+  background-color: transparent;
 }
 
 .calc-btn {
@@ -106,19 +121,21 @@ main {
 #ccdisplay {
   background-color: aliceblue;
   min-height: 90px;
+  font-size: 45px !important;
 }
 
 #cnpower,
 #ccpower {
   background-color: coral;
+  color: black;
 }
 
 .calc-outros {
-  background-color: rgb(212, 225, 255);
+  background-color: var(--cor-fundo-clara);
 }
 
 .calc-principal {
-  background-color: aliceblue;
+  background-color: var(--cor-fundo-claraX);
 }
 
 /* ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ */
