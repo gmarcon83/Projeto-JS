@@ -1,6 +1,52 @@
+var padrao = true;
 
+// Executa quando carrega a pagina
+window.onload = function(){
+    ligarCalculadora();
+}
 
+function power(calc){
+    // Determina qual queremos ligar, se apertarmos em uma
+    // que está ligada, desliga ela e liga a outra
+    if (calc == "padrao" && !padrao){
+        padrao = true;
+    } else if (calc == "padrao"){
+        padrao = false;
+    } else if (calc == "cientifica" && !padrao){
+        padrao = true;
+    } else {
+        padrao = false;
+    }
+    ligarCalculadora();
+}
 
+function ligarCalculadora(){
+    // Altera o botão power e o display na calc ligada
+    if (padrao) {
+        document.getElementById("cnpower").style.color = "green"
+        document.getElementById("cnpower").style.textShadow = "0 0 10px lightgreen"
+        document.getElementById("cndisplay").style.backgroundColor = "aliceblue"
+        document.getElementById("ccpower").style.color = ""
+        document.getElementById("ccpower").style.textShadow = ""
+        document.getElementById("ccdisplay").style.backgroundColor = "darkgray"
+        document.getElementById("ccdisplay").innerHTML = ""
+    } else {
+        document.getElementById("cnpower").style.color = ""
+        document.getElementById("cnpower").style.textShadow = ""
+        document.getElementById("cndisplay").style.backgroundColor = "darkgray"
+        document.getElementById("cndisplay").innerHTML = ""
+        document.getElementById("ccpower").style.color = "green"
+        document.getElementById("ccpower").style.textShadow = "0 0 10px lightgreen"
+        document.getElementById("ccdisplay").style.backgroundColor = "aliceblue"
+    }
+}
+
+function botao(botao){
+    // Pega o cod do botão
+    let codBotao = botao.innerHTML;
+    // Pega o display da calculadora
+
+}
 
 
 
