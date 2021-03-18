@@ -1,5 +1,5 @@
 #grande{
-    background-color: #1a7dd04d;
+    background-color: var(--cor-fundo-clara);
     padding: 23px;
     margin-top: 22px;
     height: 477px;
@@ -7,9 +7,19 @@
     width: 33%;
     border-radius: 23px 23px;
 }
-#button{
-    border-color: #00000052;
+
+h3{
+    color: var(--cor-texto-clara);
 }
+
+#primeiraopção{
+    color: var(--cor-texto-clara);
+}
+
+#segundaopção{
+    color: var(--cor-texto-clara);
+}
+
 #botao{
     float: right;
     width: 46%;
