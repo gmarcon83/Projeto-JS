@@ -40,6 +40,8 @@ function VerificaCPF() {
     var soma = 0;
     var resto;
     
+    if (strfCpf = '')
+        return
 
     if (strCpf == "00000000000" || strCpf.length != 11) {
         alert("CPF Inválido");
@@ -76,7 +78,7 @@ function VerificaCPF() {
     } else {
         resto = 11 - resto;
     }
-
+    
     if (resto != parseInt(strCpf.substring(10, 11))) {
         alert("CPF Inválido");
         return false;
@@ -145,7 +147,9 @@ function valDia(valor) {
 
 function valAno(valor) {
     let numero = valor.value;
-    if (numero > 2021 || numero < 1891) {
+    if (numero == '')
+        return
+    else if (numero > 2021 || numero < 1891) {
         alert('Ano inválido!');
         valor.value = '';
     }
