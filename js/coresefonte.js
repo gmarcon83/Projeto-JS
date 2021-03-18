@@ -1,6 +1,23 @@
 var tema = "dia";
 var tamanhoFonte = "normal";
 
+window.onload = function(){
+    let corSalva = sessionStorage.getItem("cor");
+    let fonteSalva = sessionStorage.getItem("fonte");
+    if (corSalva == "dia") {
+        tema = "noite";
+    } else if ("noite"){
+        tema = "dia";
+    }
+    if (fonteSalva == "normal"){
+        tamanhoFonte = "grande";
+    } else if (fonteSalva == "grande"){
+        tamanhoFonte = "normal";
+    }
+    trocarTema();
+    trocarFonte();
+}
+
 function trocarTema(){
     let body = document.getElementById("body");
     switch (tema){
@@ -13,6 +30,7 @@ function trocarTema(){
             tema = "dia"
             break;
     }
+    sessionStorage.setItem("cor", tema)
 }
 
 function trocarFonte(){
@@ -27,4 +45,5 @@ function trocarFonte(){
             tamanhoFonte = "normal"
             break;
     }
+    sessionStorage.setItem("fonte", tamanhoFonte)
 }
