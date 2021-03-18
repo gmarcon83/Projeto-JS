@@ -131,7 +131,7 @@ function frase() {
     if (idade > 130 || idade < 0 || isNaN(idade)) {
         alert('Idade inválida!');
     } else {    
-        document.getElementById('mensagem').innerHTML = `Olá ${nome}, seu login é ${email}, você tem ${idade} anos, se define como uma pessoa do sexo ${sexo} e pode usar ${cpf} como senha.`;
+        document.getElementById('mensagem').innerHTML = `Olá <strong>${nome}</strong>, seu login é <strong>${email}</strong>, você tem <strong>${idade}</strong> anos, se define como uma pessoa do sexo <strong>${sexo}</strong> e pode usar <strong>${cpf}</strong> como senha.`;
     }
 }
 

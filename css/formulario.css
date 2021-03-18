@@ -1,0 +1,90 @@
+/*
+var(--cor-acento-suave);
+var(--cor-acento-normal);
+var(--cor-acento-forte);
+var(--cor-fundo-clara);
+var(--cor-fundo-normal);
+var(--cor-fundo-escura);
+var(--cor-texto-clara);
+var(--cor-texto-normal);
+var(--cor-texto-escura);
+
+*/
+
+
+h1 {
+    text-align: center;
+}
+
+form {
+    background-color: var(--cor-fundo-normal);
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+input {
+    background-color: var(--cor-fundo-clara);
+    display: block;   
+    border: none;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+#box-name, #box-cpf, #mailbox, #box-sexo, #box-data {
+    width: 90%;
+    margin: 0 auto 20px auto;
+}
+#box-name input, #box-cpf input, #mailbox input, #box-sexo input {
+    width: 100%;
+}
+
+#box-data1, #box-data2, #box-data3 {
+    display: inline-block; 
+}
+
+#box-data1{
+    margin-right: 10px;
+    width: calc(30% - 10px);
+}
+
+#box-data2 {
+    margin-right: 10px;
+    width: calc(40% - 8px);
+}
+
+#box-data3 {
+    width: calc(30% - 10px);
+}
+
+#box-data1 input, #box-data2 input, #box-data3 input {
+    width: 100%;
+}
+
+#mailbox {
+    display: block;
+}
+
+label {
+    font-weight: 700;
+}
+
+#btt-box {
+    margin: 30px 0 0 0;
+    text-align: center;    
+}
+
+#btt-box button {
+    font-weight: 900;
+    border-top: none; border-left: none; border-right: none;    
+    border-bottom: 2px solid var(--cor-texto-escura);
+    color: var(--cor-texto-normal);
+    outline: none;
+}
+
+#mensagem {
+    width: 50%;    
+    margin: 30px auto;
+    font-size: 1.6rem;
+    text-align: center;
+}
