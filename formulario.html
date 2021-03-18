@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<!-- Gabriela Padilha Calhau, Giovanni Marcon, Mahorni Maia  -->
+<!-- Gabriela Padilha Calhau, Giovanni Marcon, Mahonri Maia  -->
 
 <head>
     <!--▲▼▲▼▲▼▲▼ Icone site ▲▼▲▼▲▼▲▼-->
@@ -26,8 +26,69 @@
 
 </head>
 
-<body>
+<body id="body" class="cores-dia">
+    <div id="tamanho-fonte" class="fonte-normal">
+        <header>
+            <div id="header-conteudo">
+                <img src="img/gmg-logo.png" alt="Logo marca GMG">
+                <div>
 
+                </div>
+            </div>
+        </header>
+        <main>
+            <div>
+                <h2>Cadastro</h2>
+                <form id="formulario" action="">
+                    <label for="nome">Nome completo: </label>
+                    <input type="text" name="nome" id="nome" placeholder="Nome completo" oninput="this.value = this.value.toUpperCase()">
+                    <label for="cpf">CPF: </label>
+                    <input type="text" name="cpf" id="cpf" placeholder="CPF" onblur="VerificaCPF()">
+                    <br>
+                    <label for="dia">Dia de nasc.: </label>
+                    <input type="number" name="dia" id="dia" min="1" max="31" placeholder="Dia" onblur="valDia(this)">
+                    <label for="mes">Mês: </label>
+                    <input list="meses" type="text" name="mes" id="mes" placeholder="Mês">        
+                    <label for="ano">Ano: </label>
+                    <input type="number" name="ano" id="ano" min="1891" max="2021" placeholder="Ano" onblur="valAno(this)">
+                    <br>
+                    <label for="email">E-mail: </label>
+                    <input type="email" name="email" id="email" placeholder="E-mail" onblur="validacaoEmail(this)">
+                    <label for="sexo">Sexo: </label>
+                    <input list="sexos" type="text" name="sexo" id="sexo" placeholder="Sexo">
+                    
+                    <datalist id="meses">
+                        <option value="janeiro"></option>
+                        <option value="fevereiro"></option>
+                        <option value="março"></option>
+                        <option value="abril"></option>
+                        <option value="maio"></option>
+                        <option value="junho"></option>
+                        <option value="julho"></option>
+                        <option value="agosto"></option>
+                        <option value="setembro"></option>
+                        <option value="outubro"></option>
+                        <option value="novembro"></option>
+                        <option value="dezembro"></option>
+                    </datalist>
+
+                    <datalist id="sexos">
+                        <option value="feminino"></option>
+                        <option value="masculino"></option>
+                        <option value="não informado"></option>
+                    </datalist>
+                </form>
+                <div id="btt-box">
+                    <button onclick="frase()">Cadastrar</button>
+                </div>
+                
+                <div id="mensagem"></div>
+            </div>
+        </main>
+        <footer>
+            <small>GMG Soluções Digitais &copy; - 2021</small>
+        </footer>
+    </div>
 </body>
 
 </html>

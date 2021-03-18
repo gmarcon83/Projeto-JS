@@ -2,7 +2,7 @@
 
 Projeto final do módulo de JS do curso Web Full Stack da [Soul Code Academy](https://soulcodeacademy.org/) no 34º dia do Curso de Web Developer Full Stack.
 
-**Equipe**: Giovanni Marcon, Gabriela Padilha Calhau (_@???_) e Mahorni Maia (_@???_).
+**Equipe**: Giovanni Marcon, Gabriela Padilha Calhau (_@gabrielacalhau_) e Mahorni Maia (_@mahonrimaia_).
 
 **Objetivo**: Criar uma landing page que acesse outras 3 paginas cada uma com as funções pré definidas abaixo.
 

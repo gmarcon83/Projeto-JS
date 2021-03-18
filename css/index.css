@@ -1,0 +1,24 @@
+#quem-somos-fundo {
+  background-color: var(--cor-fundo-clara);
+  height: calc(100vh - 80px);
+}
+
+#calculadora-fundo {
+  background-color: var(--cor-fundo-normal);
+  height: 400px;
+}
+
+#cadastro-fundo {
+  background-color: var(--cor-fundo-clara);
+  height: 400px;
+}
+
+#conversor-fundo {
+  background-color: var(--cor-fundo-normal);
+  height: 400px;
+}
+
+#equipe-fundo {
+  background-color: var(--cor-fundo-clara);
+  height: 400px;
+}
