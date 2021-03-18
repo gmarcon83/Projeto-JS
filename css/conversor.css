@@ -1,0 +1,64 @@
+#grande{
+    background-color: #1a7dd04d;
+    padding: 23px;
+    margin-top: 22px;
+    height: 477px;
+    margin-left: 56px;
+    width: 33%;
+    border-radius: 23px 23px;
+}
+#button{
+    border-color: #00000052;
+}
+#botao{
+    float: right;
+    width: 46%;
+}
+#resultado{
+    float: left;
+}
+#val{
+    float: left;
+}
+
+#opcao1{
+    border-color: #00000052;
+}
+
+#opcao2{
+    border-color: #00000052;
+}
+#btn1{
+    border-radius: 10px 10px;
+    background: #3041a087;
+    margin-top: 62px;
+    border-style: none;
+    
+    width: 52%;
+}
+
+#input{
+    border-color: #00000052;
+    margin-left: 21px;
+}
+
+#btn1:hover{
+    background-color: rgba(30, 30, 102, 0.527);
+    border: 2px;
+    border-color: #00000052;
+}
+
+#div4{
+    text-align: center;
+    width: 88%;
+    margin-top: 24px;
+    float: right;
+}
+
+#barraresultado{
+    float: right;
+    border-color: #00000052;
+    margin-top: 9px;
+    width: 49%;
+    margin-right: 97px;
+}
