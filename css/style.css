@@ -13,6 +13,7 @@ h4,
 h5,
 h6 {
   font-family: "Montserrat";
+  font-variant: small-caps;
 }
 
 .fonte-normal {
@@ -156,6 +157,17 @@ header {
   width: var(--largura-meio);
   max-width: var(--largura-maxima);
   margin: auto;
+}
+
+#header-conteudo i {
+  font-size: 30px;
+  padding: 0 5px;
+  cursor: pointer;
+  line-height: 80px;
+}
+
+#header-conteudo i:hover {
+  color: var(--azul-500);
 }
 
 header img {

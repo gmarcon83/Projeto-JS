@@ -21,13 +21,16 @@
     <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='css/formulario.css'>
 
+    <!-- ▲▼▲▼▲▼▲▼ Link Fonts Awesome ▲▼▲▼▲▼▲▼ -->
+    <script src="https://kit.fontawesome.com/5cf15c459a.js" crossorigin="anonymous"></script>
+
     <!-- ▲▼▲▼▲▼▲▼ Scripts ▲▼▲▼▲▼▲▼ -->
     <script src="js/coresefonte.js"></script>
     <script src="js/formulario.js"></script>
 
 </head>
 
-<body id="body" class="cores-dia">
+<body id="body" class="cores-noite">
     <div id="tamanho-fonte" class="fonte-normal">
         <header>
             <div id="header-conteudo">
@@ -35,8 +38,8 @@
                     <a href="index.html"><img src="img/gmg-logo.png" alt="Logo marca GMG"></a>
                     <div>
                         <div>
-                            <button onclick="trocarTema()">Trocar Cor</button>
-                            <button onclick="trocarFonte()">Trocar Fonte</button>
+                            <i onclick="trocarTema()" class="fas fa-adjust"></i>
+                            <i onclick="trocarFonte()" class="fas fa-text-height"></i>
                         </div>
                     </div>
         </header>
@@ -111,7 +114,7 @@
                         </datalist>
                     </form>
                     <div id="btt-box">
-                        <button onclick="frase()">cadastrar</button>
+                        <button onclick="frase()">Cadastrar</button>
                     </div>
                 </div>
                 <div id="mensagem"></div>

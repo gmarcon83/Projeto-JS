@@ -21,34 +21,36 @@
     <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='css/conversor.css'>
 
+    <!-- ▲▼▲▼▲▼▲▼ Link Fonts Awesome ▲▼▲▼▲▼▲▼ -->
+    <script src="https://kit.fontawesome.com/5cf15c459a.js" crossorigin="anonymous"></script>
+
     <!-- ▲▼▲▼▲▼▲▼ Scripts ▲▼▲▼▲▼▲▼ -->
     <script src="js/conversor.js"></script>
     <script src="js/coresefonte.js"></script>
 
 </head>
 
-<body id="body" class="cores-dia">
+<body id="body" class="cores-noite">
     <div id="tamanho-fonte" class="fonte-normal">
         <header>
             <div id="header-conteudo">
                 <a href="index.html"><img src="img/gmg-logo.png" alt="Logo marca GMG"></a>
                 <div>
-                    <button onclick="trocarTema()">Trocar Cor</button>
-                    <button onclick="trocarFonte()">Trocar Fonte</button>
+                    <i onclick="trocarTema()" class="fas fa-adjust"></i>
+                    <i onclick="trocarFonte()" class="fas fa-text-height"></i>
                 </div>
             </div>
         </header>
         <main>
             <div id="fundo-titulo">
                 <div id="meio-titulo">
-                    <h1>Cadastro</h1>
-                    <P>Preencha abaixo o formulário de contato para que possamos entender melhor suas necessidades
-                        e
-                        retornar com a melhor proposta.</P>
+                    <h1>Conversão de moedas</h1>
+                    <P>Com o nosso conversor de moedas exclusivo, você pode converter moedas de maneira fácil e rápida.
+                    </P>
                 </div>
             </div>
             <div id="grande">
-                <h1>Conversão de moedas</h1>
+
                 <div id=campos-moedas>
                     <div id="aqui">
                         <div id="esquerda">
@@ -84,7 +86,8 @@
                             <h3>Valor a ser convertido:</h3>
                         </div>
                         <div id="barra">
-                            <input id="input" type="number" min="0" step="1" onblur="valinput(this)"
+                            <input id="input" type="number" min="0" step="1"
+                                onkeypress="return event.charCode >= 48 && event.charCode <= 57"
                                 placeholder="Digite um valor $">
                         </div>
                     </div>

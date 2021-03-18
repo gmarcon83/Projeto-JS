@@ -2,8 +2,8 @@ function converter(){
     var entrada = document.getElementById("opcao1").value
     var saida = document.getElementById("opcao2").value
     var valor = document.getElementById("input").value
-        
-    if (valor == '') {        
+
+    if (valor == '') {
         return
     } else if (valor < 00) {
         alert('Valor inválido!');
@@ -11,11 +11,9 @@ function converter(){
     }
     var resultado = (entrada*saida*valor)
     document.getElementById("barraresultado").value = resultado.toFixed(2)
+}
 
+function valinput(campo){
 
 
 }
-
-
-
-

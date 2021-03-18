@@ -21,47 +21,80 @@
     <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='css/index.css'>
 
+    <!-- ▲▼▲▼▲▼▲▼ Link Fonts Awesome ▲▼▲▼▲▼▲▼ -->
+    <script src="https://kit.fontawesome.com/5cf15c459a.js" crossorigin="anonymous"></script>
+
     <!-- ▲▼▲▼▲▼▲▼ Scripts ▲▼▲▼▲▼▲▼ -->
     <script src="js/index.js"></script>
     <script src="js/coresefonte.js"></script>
 
 </head>
 
-<body id="body" class="cores-dia">
+<body id="body" class="cores-noite">
     <div id="tamanho-fonte" class="fonte-normal">
         <header>
             <div id="header-conteudo">
                 <img src="img/gmg-logo.png" alt="Logo marca GMG">
                 <div>
-                    <button onclick="trocarTema()">Trocar Cor</button>
-                    <button onclick="trocarFonte()">Trocar Fonte</button>
+                    <i onclick="trocarTema()" class="fas fa-adjust"></i>
+                    <i onclick="trocarFonte()" class="fas fa-text-height"></i>
                 </div>
             </div>
         </header>
         <main>
             <div id="quem-somos-fundo">
                 <div id="quem-somos">
-                    <a href="calculadora.html">calc</a>
-                    <a href="conversor.html">conv</a>
-                    <a href="formulario.html">form</a>
+                    <h1>Soluções digitais personalizadas para
+                        sua empresa.</h1>
+                    <p>Negócios, tecnologia e design lado a lado.</p>
+                </div>
+            </div>
+            <div id="projetos-fundo">
+                <div id="projetos">
+                    <h2>Uma empresa digital</h2>
+                    <p>Somos uma empresa que já nasceu na cultura digital e que cria soluções a partir de uma
+                        metodologia que combina intensa análise do negócio, design de experiência com o usuário e
+                        implantação de tecnologias.</p>
+                    <p>Conheça abaixo algumas de nossas soluções desenvolvidas para outros clientes.</p>
                 </div>
             </div>
             <div id="calculadora-fundo">
-                <div id="calculadora">
-                    <div>Imagem</div>
-                    <div>Texto</div>
+                <div class="projetos" id="calculadora">
+                    <div class="projetos-img"></div>
+                    <div class="projetos-texto">
+                        <h3>Calculadora</h3>
+                        <p>Calculadora é um dispositivo para a realização de cálculos numéricos.</p>
+                        <p>Calculadora científica é um tipo de calculadora eletrônica geralmente executada manualmente,
+                            projetada para calcular problemas em ciência, engenharia e matemática.</p>
+                        <a href="calculadora.html">Testar</a>
+                    </div>
                 </div>
             </div>
             <div id="cadastro-fundo">
-                <div id="cadastro">
-                    <div>Texto</div>
-                    <div>Imagem</div>
+                <div class="projetos" id="cadastro">
+                    <div class="projetos-texto">
+                        <h3>Formulario de Cadastro</h3>
+                        <p>Página completa com entrada das informações mais importantes para o seu banco de dados como
+                            nome completo, CPF, dada de nascimento, sexo e idade. </p>
+                        <p>Campos de validação com alerta visual para que informações imprecisas não sejam aceitas até
+                            que a devida correção seja realizada.
+                        </p>
+                        <a href=" formulario.html">Formulário</a>
+                    </div>
+                    <div class="projetos-img"></div>
                 </div>
             </div>
             <div id="conversor-fundo">
-                <div id="conversor">
-                    <div>Imagem</div>
-                    <div>Texto</div>
+                <div class="projetos" id="conversor">
+                    <div class="projetos-img"></div>
+                    <div class="projetos-texto">
+                        <h3>Conversor de Moedas</h3>
+                        <p>Não perca mais tempo pesquisando o valor do dólar e outras moedas. Confira as cotações das
+                            principais moedas do mundo com nosso conversor de moedas de forma rápida e prática.
+                        </p>
+                        <p>Menu dropdown intuitivo e consistente. Obtenha</p>
+                        <a href=" conversor.html">Conversor</a>
+                    </div>
                 </div>
             </div>
             <div id="equipe-fundo">
