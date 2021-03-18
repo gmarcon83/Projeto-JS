@@ -1,11 +1,4 @@
-/* TODO:
-    - Limitar o número de caracteres em cada calculadora e adicionar
-      tamanho minimo para cada uma delas no CSS para ficar certo;
-    - Desativar de verdade o display da calculadora que não está ligada;
-*/
-
 var padrao = true;
-
 
 
 function power(calc){
@@ -22,6 +15,7 @@ function power(calc){
     }
     ligarCalculadora();
 }
+
 
 function ligarCalculadora(){
     // Altera o botão power e o display na calc ligada
@@ -45,24 +39,32 @@ function ligarCalculadora(){
 }
 
 function botao(botao){
+    // Testa se a calculadora ta ligada, antes de aceitar o input
+    let qualCalculadora = botao.parentElement.id
+    if (qualCalculadora == "calculadora-normal" && !padrao){
+        return
+    } else if (qualCalculadora == "calculadora-cientifica" && padrao){
+        return
+    }
+
     // Pega o cod do botão
     let codBotao = botao.innerHTML;
     // Pega o que existe no display
     let expExist = botao.parentElement.childNodes[1].innerHTML
-
     // Limpamos o display caso a expressao anterior tenha dado erro
     if (expExist == "ERRO"){
         botao.parentElement.childNodes[1].innerHTML = "";
         expExist = ""
     }
+
     // Tratamos os casos especiais
     switch (codBotao){
         case "=":
             codBotao = calcular(expExist);
             botao.parentElement.childNodes[1].innerHTML = "";
             break;
-        // Essa linha é um sacrificio que temos que fazer pra ficar mais bonita
-        // a calculadora. Seria possivel usar √ no lugar.
+        // Essa linha é um sacrificio que temos que fazer pra ficar mais bonita a
+        // calculadora. Seria possivel usar √ no lugar do fonts awesome e evitar isso
         case "<i class=\"fas fa-square-root-alt\" aria-hidden=\"true\"></i>":
             codBotao = Math.sqrt(calcular(expExist));
             botao.parentElement.childNodes[1].innerHTML = "";
@@ -85,10 +87,16 @@ function botao(botao){
             codBotao = "3.1415";
             break;
     }
+    // Limita o numero de caracteres, dependendo da calculadora
+    let expFinal = botao.parentElement.childNodes[1].innerHTML += codBotao
+    if (padrao && expFinal.length > 11)
+        expFinal = expFinal.substr(0, 11)
+    else (!padrao && expFinal.length > 14)
+        expFinal = expFinal.substr(0, 14)
     // Pega o display da calculadora e adiciona o codigo tratado
-    botao.parentElement.childNodes[1].innerHTML += codBotao
-
+    botao.parentElement.childNodes[1].innerHTML = expFinal
 }
+
 
 function calcular(expressao){
     // Transformamos a string para os caracteres que o JS entende. EX: x para *

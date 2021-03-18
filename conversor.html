@@ -40,7 +40,7 @@
         <h1>Conversão de moedas</h1>
 
         <div id="aqui">
-            <div id="esquerda" >
+            <div id="esquerda">
                 <b><label id="primeiraopção">Converter de: </label></b><br />
                 <select id="opcao1">
                     <option>Selecione uma opção</option>
@@ -54,21 +54,22 @@
                 </select><br />
             </div>
         </div>
-
+        <br>
         <div id="direita">
             <b><label id="segundaooção">Converter para: </label></b><br />
             <select id="opcao2">
-                <option >Selecione uma opção</option>
-                    <option value="0.179">Dólar Americano</option>
-                    <option value="0.222">Dólar Canadense</option>
-                    <option value="0.229">Dólar Australiano</option>
-                    <option value="1">Real</option>
-                    <option value="0.148">Euro</option>
-                    <option value="0.127">Libra</option>
-                    <option value="16.666">Peso Argentino</option>
+                <option>Selecione uma opção</option>
+                <option value="0.179">Dólar Americano</option>
+                <option value="0.222">Dólar Canadense</option>
+                <option value="0.229">Dólar Australiano</option>
+                <option value="1">Real</option>
+                <option value="0.148">Euro</option>
+                <option value="0.127">Libra</option>
+                <option value="16.666">Peso Argentino</option>
             </select><br />
         </div>
-        </br>
+        
+        
         <div id="val">
             <div id="h3">
                 <h3>Valor a ser convertido:</h3>
@@ -77,18 +78,20 @@
                 <input id="input" onblur="valinput(this)" placeholder="Digite um valor $">
             </div>
         </div>
-        <!-- <button id="button">Converter</button> --> 
-        <input type="button" value="Converter" id="btn1" onclick="converter()" />
-
-        <div id="div4">
-            <label id="resultado">Resultado:</label><br />
-            <input id="barraresultado">
-            
+        <!-- <button id="button">Converter</button> -->
+        <div id="botao">
+            <input type="button" value="Converter" id="btn1" onclick="converter()" />
         </div>
-        
+     
+        <div id="div4">
+            <p id="resultado">Resultado:</p>
+            <input id="barraresultado">
+        </div>
+
 
     </div>
-    
+
+
 </body>
 
 </html>
