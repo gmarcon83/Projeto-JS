@@ -50,14 +50,20 @@
                     <p>Negócios, tecnologia e design lado a lado.</p>
                 </div>
             </div>
-            <div id="projetos-fundo">
-                <div id="projetos">
+            <div id="contato-fundo">
+                <div id="contato">
                     <h2>Uma empresa digital</h2>
                     <p>Somos uma empresa que já nasceu na cultura digital e que cria soluções a partir de uma
                         metodologia que combina intensa análise do negócio, design de experiência com o usuário e
                         implantação de tecnologias.</p>
                     <p>Cadastre seu email para mais informações ou conheça abaixo algumas de nossas soluções já
                         desenvolvidas.</p>
+
+                    <div id="contato-email">
+                        <input type="email" name="email" id="email" placeholder="E-mail" onblur="validacaoEmail()"
+                            oninput="this.value=this.value.toLowerCase()">
+                        <button onclick="cadastrarEmail(validacaoEmail())">Cadastrar</button>
+                    </div>
                 </div>
             </div>
             <div id="calculadora-fundo">

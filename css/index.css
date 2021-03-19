@@ -58,14 +58,14 @@ body {
 }
 
 /* ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ */
-/* ▲▼▲▼▲▼▲▼▲▼▲▼▲▼  Projetos  ▲▼▲▼▲▼▲▼▲▼▲▼▲▼ */
+/* ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲  Contato  ▲▼▲▼▲▼▲▼▲▼▲▼▲▼ */
 /* ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ */
 
-#projetos-fundo {
+#contato-fundo {
   background-color: var(--cor-fundo-clara);
 }
 
-#projetos {
+#contato {
   width: var(--largura-meio);
   max-width: var(--largura-maxima);
   margin: auto;
@@ -73,9 +73,50 @@ body {
   text-align: justify;
 }
 
-#projetos p {
+#contato p {
   font-weight: 300;
 }
+
+#contato-email {
+  text-align: center;
+  margin: 35px 0 15px;
+}
+
+#email {
+  background-color: var(--cor-fundo-escura);
+  border: none;
+  color: var(--cor-texto-clara);
+  padding: 0.5em 0.6em;
+}
+
+#contato-email button {
+  font-variant: small-caps;
+  font-weight: 400;
+  border: 2px solid var(--cor-texto-escura);
+  background: var(--cor-acento-suave);
+  color: var(--cor-texto-normal);
+  outline: none;
+  margin-left: 25px;
+  border-radius: 8px;
+  border-style: none;
+  padding: 0.5em 0.6em;
+  width: 150px;
+}
+
+#contato-email button:hover {
+  background-color: var(--cor-acento-forte);
+  border-color: var(--cor-texto-escura);
+  color: white;
+  border: 2px;
+}
+
+#contato-email button:active {
+  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.564);
+}
+
+/* ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ */
+/* ▲▼▲▼▲▼▲▼▲▼▲▼▲▼  Projetos  ▲▼▲▼▲▼▲▼▲▼▲▼▲▼ */
+/* ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ */
 
 .projetos {
   display: grid;
@@ -121,7 +162,7 @@ body {
   text-decoration: none;
   text-align: center;
   border-style: none;
-  border-radius: 14px;
+  border-radius: 8px;
   margin: 30px auto 15px;
   padding: 10px;
   width: 250px;
