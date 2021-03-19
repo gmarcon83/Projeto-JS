@@ -12,8 +12,3 @@ function converter(){
     var resultado = (entrada*saida*valor)
     document.getElementById("barraresultado").value = resultado.toFixed(2)
 }
-
-function valinput(campo){
-
-
-}
