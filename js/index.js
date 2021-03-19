@@ -23,14 +23,14 @@ function validacaoEmail(field) {
     /* alert("E-mail válido"); */
     } else {
     document.getElementById("email").style.boxShadow = "0 0 6px red, inset 0 0 3px red";
+    return false
     //alert("E-mail inválido");
     }
     return true
 }
 
-function cadastrarEmail(emailValido){
-
-    if (emailValido) {
+function cadastrarEmail(){
+    if (validacaoEmail()) {
         alert("Email cadastrado com sucesso.")
         document.getElementById("email").value = ""
     }
