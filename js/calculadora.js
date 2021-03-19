@@ -1,4 +1,5 @@
 var padrao = true;
+var calculou = false;
 
 
 function power(calc){
@@ -6,16 +7,11 @@ function power(calc){
     // que está ligada, desliga ela e liga a outra
     if (calc == "padrao" && !padrao){
         padrao = true;
-    } else if (calc == "padrao"){
-        padrao = false;
-    } else if (calc == "cientifica" && !padrao){
-        padrao = true;
-    } else {
+    } else if (calc == "cientifica" && padrao){
         padrao = false;
     }
     ligarCalculadora();
 }
-
 
 function ligarCalculadora(){
     // Altera o botão power e o display na calc ligada
@@ -95,6 +91,7 @@ function botao(botao){
         expFinal = expFinal.substr(0, 14)
     // Pega o display da calculadora e adiciona o codigo tratado
     botao.parentElement.childNodes[1].innerHTML = expFinal
+
 }
 
 
