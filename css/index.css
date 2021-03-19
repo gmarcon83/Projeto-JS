@@ -7,6 +7,7 @@ body {
   background-image: url(../img/img-inicio.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position-y: 20%;
   height: calc(100vh - 80px);
 }
 
@@ -21,6 +22,10 @@ body {
 #quem-somos h1 {
   width: 70%;
 }
+
+/* ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ */
+/* ▲▼▲▼▲▼▲▼▲▼▲▼▲▼  Projetos  ▲▼▲▼▲▼▲▼▲▼▲▼▲▼ */
+/* ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ */
 
 #projetos-fundo {
   background-color: var(--cor-fundo-clara);
@@ -69,18 +74,21 @@ body {
   text-align: justify;
 }
 
+/* ▲▼▲▼ Botão projetos ▲▼▲▼ */
+
 .projetos-texto a {
-  text-decoration: none;
-  color: var(--cor-texto-normal);
   display: block;
-  font-variant: small-caps;
   background-color: var(--cor-acento-suave);
+  color: var(--cor-texto-normal);
+  font-variant: small-caps;
+  font-size: 1.2em;
+  text-decoration: none;
+  text-align: center;
   border-style: none;
+  border-radius: 14px;
+  margin: 30px auto 15px;
   padding: 10px;
   width: 250px;
-  text-align: center;
-  margin: 0 auto 15px;
-  font-size: 1.2em;
 }
 
 .projetos-texto a:hover {
@@ -92,6 +100,8 @@ body {
 .projetos-texto a:active {
   box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.564);
 }
+
+/* ▲▼▲▼ Seções projetos ▲▼▲▼ */
 
 #calculadora {
   grid-template-columns: 2fr 3fr;
@@ -129,6 +139,10 @@ body {
   background-color: var(--cor-fundo-normal);
 }
 
+/* ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ */
+/* ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼  Equipe  ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ */
+/* ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ */
+
 #equipe-fundo {
   background-color: var(--cor-fundo-clara);
 }
@@ -145,6 +159,11 @@ body {
   margin: 20px;
   padding: 5px 15px;
   background-color: var(--cor-fundo-normal);
+  width: 30%;
+}
+
+.equipe-cartao:hover {
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.363);
 }
 
 .equipe-cartao img {

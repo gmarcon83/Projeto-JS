@@ -27,7 +27,7 @@ function validacaoEmail(field) {
     /* alert("E-mail válido"); */
     } else {
     document.getElementById("email").style.boxShadow = "0 0 6px red, inset 0 0 3px red";
-    alert("E-mail inválido");
+    //alert("E-mail inválido");
     }
     return true
 }
@@ -38,6 +38,7 @@ function VerificaCPF() {
     var soma = 0;
     var resto;
     if (strCpf == ''){
+        //alert("CPF Inválido");
         document.getElementById("cpf").style.boxShadow = "0 0 6px red, inset 0 0 3px red";
         return false
     }
@@ -92,19 +93,15 @@ function VerificaCPF() {
 function msgCPF() {
     var msg = verificaCPF();
     if (msg) {
-        alert('CPF válido');
+        //alert('CPF válido');
     } else {
-        alert('CPF inválido!');
+        //alert('CPF inválido!');
     }
 }
 
 function tiraBorda(elem){
 
     elem.style.boxShadow = "";
-}
-
-function teste(){
-    alert("2")
 }
 
 function frase() {

@@ -34,14 +34,14 @@
     <div id="tamanho-fonte" class="fonte-normal">
         <header>
             <div id="header-conteudo">
-                <div id="header-conteudo">
-                    <a href="index.html"><img src="img/gmg-logo.png" alt="Logo marca GMG"></a>
+
+                <a href="index.html"><img src="img/gmg-logo.png" alt="Logo marca GMG"></a>
+                <div>
                     <div>
-                        <div>
-                            <i onclick="trocarTema()" class="fas fa-adjust"></i>
-                            <i onclick="trocarFonte()" class="fas fa-text-height"></i>
-                        </div>
+                        <i onclick="trocarTema()" class="fas fa-adjust"></i>
+                        <i onclick="trocarFonte()" class="fas fa-text-height"></i>
                     </div>
+                </div>
         </header>
         <main>
             <div>
@@ -62,7 +62,8 @@
                         </div>
                         <div id="box-cpf">
                             <label for="cpf">CPF: </label>
-                            <input type="text" name="cpf" id="cpf" placeholder="CPF" onblur="VerificaCPF()">
+                            <input type="text" name="cpf" id="cpf" placeholder="CPF" onblur="VerificaCPF()"
+                                onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                         </div>
                         <div id="box-data">
                             <div id="box-data1">
@@ -73,7 +74,7 @@
                             <div id="box-data2">
                                 <label for="mes">Mês: </label>
                                 <input list="meses" type="text" name="mes" id="mes" placeholder="Mês"
-                                    onblur="tiraBorda(this)">
+                                    onblur="tiraBorda(this)" onkeypress="return event.charCode == 255">
                             </div>
                             <div id="box-data3">
                                 <label for="ano">Ano: </label>

@@ -71,13 +71,13 @@
                         <b><label id="segundaooção">Converter para: </label></b><br />
                         <select id="opcao2">
                             <option>Selecione uma opção</option>
-                            <option value="0.179">Dólar Americano</option>
-                            <option value="0.222">Dólar Canadense</option>
-                            <option value="0.229">Dólar Australiano</option>
+                            <option value="0.17908309">Dólar Americano</option>
+                            <option value="0.22241992">Dólar Canadense</option>
+                            <option value="0.22977941">Dólar Australiano</option>
                             <option value="1">Real</option>
-                            <option value="0.148">Euro</option>
-                            <option value="0.127">Libra</option>
-                            <option value="16.666">Peso Argentino</option>
+                            <option value="0.14852220">Euro</option>
+                            <option value="0.12732365">Libra</option>
+                            <option value="16.47446457">Peso Argentino</option>
                         </select><br />
                     </div>
 
@@ -86,8 +86,9 @@
                             <h3>Valor a ser convertido:</h3>
                         </div>
                         <div id="barra">
+                            <!-- Só permite entrada de numeros de 1 a 9, do . e da , -->
                             <input id="input" type="number" min="0" step="1"
-                                onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                                onkeypress="return event.charCode >= 44 && event.charCode != 45 && event.charCode != 47 && event.charCode <= 57"
                                 placeholder="Digite um valor $">
                         </div>
                     </div>
