@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--cor-fundo-clara);
 }
@@ -21,6 +25,36 @@ body {
 
 #quem-somos h1 {
   width: 70%;
+}
+
+#quem-somos p {
+  font-weight: 300;
+}
+
+/* ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ */
+/* ▲▼▲▼▲▼▲▼▲▼▲▼▲  Link float  ▼▲▼▲▼▲▼▲▼▲▼▲▼ */
+/* ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ */
+
+#links-float {
+  position: fixed;
+  bottom: 15px;
+  right: 30px;
+}
+
+#links-float i {
+  text-shadow: 0px 0px 2px rgba(245, 245, 245, 0.5);
+  color: var(--cor-texto-normal);
+  font-size: 45px;
+  opacity: 0.3;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+#links-float i:hover {
+  text-shadow: 0px 0px 2px rgba(245, 245, 245, 0.1);
+  color: var(--azul-500);
+  font-size: 45px;
+  opacity: 0.5;
 }
 
 /* ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼ */
@@ -72,12 +106,14 @@ body {
 
 .projetos-texto p {
   text-align: justify;
+  font-weight: 300;
 }
 
 /* ▲▼▲▼ Botão projetos ▲▼▲▼ */
 
 .projetos-texto a {
   display: block;
+  font-weight: 400;
   background-color: var(--cor-acento-suave);
   color: var(--cor-texto-normal);
   font-variant: small-caps;
@@ -149,6 +185,7 @@ body {
 
 #equipe {
   display: flex;
+  justify-content: space-around;
   width: var(--largura-meio);
   max-width: var(--largura-maxima);
   padding: 40px 0;
@@ -157,7 +194,7 @@ body {
 
 .equipe-cartao {
   margin: 20px;
-  padding: 5px 15px;
+  padding: 0px 15px;
   background-color: var(--cor-fundo-normal);
   width: 30%;
 }
@@ -174,7 +211,8 @@ body {
 
 .equipe-cartao h4 {
   background-color: rgba(0, 0, 0, 0.315);
-  padding: 10px 0;
+  padding: 10px 0 10px;
+  margin-top: 16px;
   text-align: center;
 }
 
