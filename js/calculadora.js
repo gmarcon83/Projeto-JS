@@ -1,21 +1,20 @@
-var padrao = true;
-
+var padrao = false;
+var cientifica = false;
+var calculou = false;
 
 function power(calc){
-    // Determina qual queremos ligar, se apertarmos em uma
-    // que está ligada, desliga ela e liga a outra
     if (calc == "padrao" && !padrao){
         padrao = true;
-    } else if (calc == "padrao"){
+    } else if (calc == "padrao" && padrao){
         padrao = false;
-    } else if (calc == "cientifica" && !padrao){
-        padrao = true;
-    } else {
-        padrao = false;
+    }
+    if (calc == "cientifica" && !cientifica){
+        cientifica = true;
+    } else if (calc == "cientifica" && cientifica){
+        cientifica = false;
     }
     ligarCalculadora();
 }
-
 
 function ligarCalculadora(){
     // Altera o botão power e o display na calc ligada
@@ -23,18 +22,21 @@ function ligarCalculadora(){
         document.getElementById("cnpower").style.color = "green"
         document.getElementById("cnpower").style.textShadow = "0 0 10px lightgreen"
         document.getElementById("cndisplay").style.backgroundColor = "aliceblue"
-        document.getElementById("ccpower").style.color = ""
-        document.getElementById("ccpower").style.textShadow = ""
-        document.getElementById("ccdisplay").style.backgroundColor = "darkgray"
-        document.getElementById("ccdisplay").innerHTML = ""
-    } else {
+     }else{
         document.getElementById("cnpower").style.color = ""
         document.getElementById("cnpower").style.textShadow = ""
         document.getElementById("cndisplay").style.backgroundColor = "darkgray"
         document.getElementById("cndisplay").innerHTML = ""
+    }
+    if (cientifica){
         document.getElementById("ccpower").style.color = "green"
         document.getElementById("ccpower").style.textShadow = "0 0 10px lightgreen"
         document.getElementById("ccdisplay").style.backgroundColor = "aliceblue"
+    } else {
+        document.getElementById("ccpower").style.color = ""
+        document.getElementById("ccpower").style.textShadow = ""
+        document.getElementById("ccdisplay").style.backgroundColor = "darkgray"
+        document.getElementById("ccdisplay").innerHTML = ""
     }
 }
 
@@ -43,10 +45,9 @@ function botao(botao){
     let qualCalculadora = botao.parentElement.id
     if (qualCalculadora == "calculadora-normal" && !padrao){
         return
-    } else if (qualCalculadora == "calculadora-cientifica" && padrao){
+    } else if (qualCalculadora == "calculadora-cientifica" && !cientifica){
         return
     }
-
     // Pega o cod do botão
     let codBotao = botao.innerHTML;
     // Pega o que existe no display
@@ -56,7 +57,14 @@ function botao(botao){
         botao.parentElement.childNodes[1].innerHTML = "";
         expExist = ""
     }
-
+    // Limpamos o display caso a finalizamos um cálculo anteriormente e não
+    //inserirmos um operador
+    if (calculou && !isNaN(codBotao)){
+        botao.parentElement.childNodes[1].innerHTML = "";
+        expExist = ""
+    } else {
+        calculou = false;
+    }
     // Tratamos os casos especiais
     switch (codBotao){
         case "=":
@@ -83,31 +91,26 @@ function botao(botao){
         case "x³":
             codBotao = "³";
             break;
-        case "π":
-            codBotao = "3.1415";
-            break;
     }
     // Limita o numero de caracteres, dependendo da calculadora
     let expFinal = botao.parentElement.childNodes[1].innerHTML += codBotao
-    if (padrao && expFinal.length > 11)
+
+    if (qualCalculadora == "calculadora-normal" && expFinal.length > 11)
         expFinal = expFinal.substr(0, 11)
-    else (!padrao && expFinal.length > 14)
+    if (qualCalculadora == "calculadora-cientifica" && expFinal.length > 14)
         expFinal = expFinal.substr(0, 14)
     // Pega o display da calculadora e adiciona o codigo tratado
     botao.parentElement.childNodes[1].innerHTML = expFinal
 }
 
-
 function calcular(expressao){
     // Transformamos a string para os caracteres que o JS entende. EX: x para *
     expressao = trocar("x","*", expressao);
     expressao = trocar("÷","/", expressao);
-    // Apenas da ciêntifica
-    if (!padrao){
-        expressao = trocar("²","**2", expressao);
-        expressao = trocar("³","**3", expressao);
-    }
-
+    expressao = trocar("²","**2", expressao);
+    expressao = trocar("³","**3", expressao);
+    expressao = calcularPi(expressao);
+    //alert(expressao)
     // Caso não seja possivel resolver a expressão retornamos um erro,
     try {
         // Normalmente se usaria parse() mas não é recomendado devido a segurança
@@ -116,10 +119,10 @@ function calcular(expressao){
     } catch(err){
         return "ERRO";
     }
-    // Retornamos o valor calculado
+    // Retornamos o valor calculado e marcamos que um calculo foi feito
+    calculou = true;
     return Function('"use strict";return (' + expressao + ')')();
 }
-
 
 // Troca todos os carateres "orig" por "novo" na "expressao"
 function trocar(orig, novo, expressao){
@@ -129,4 +132,21 @@ function trocar(orig, novo, expressao){
         cont++;
     }
     return expressao;
+}
+
+// Feito depois
+function calcularPi (expressao){
+    let cont = 0 // Apenas uma segurança
+    while (expressao.includes("π") && cont < 20){
+        //Acha o pi
+        let piLugar = expressao.indexOf("π")
+        //testamos o que tem antes e colocamos um * se necessário
+        if (piLugar - 1 >= 0 && !isNaN(expressao[piLugar - 1])){
+            expressao = expressao.replace("π", "*3.1415926535");
+        } else {
+            expressao = expressao.replace("π", "3.1415926535");
+        }
+    cont++;
+    }
+    return expressao
 }

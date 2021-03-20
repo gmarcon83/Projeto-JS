@@ -21,6 +21,7 @@ Projeto final do módulo de JS do curso Web Full Stack da [Soul Code Academy](ht
 - ambas funcionais se habilitada (Escolher habilitar por botão);
 - A científica deve ter as mesma funcionalidades da simples adicionando: Raiz quadrada, elevado a 2, elevado a 3 e numero Pi;
 
+*OBS: Após encerramento do projeto foi implementada a opção de operar ambas calculadoras ao mesmo tempo, pois achamaos mais interessante, mas era contra os requisitos.*
 
 #### Página de cadastro
 - Nome completo ( converter todas as letras para maiúscula);
