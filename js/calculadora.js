@@ -2,7 +2,6 @@ var padrao = false;
 var cientifica = false;
 var calculou = false;
 
-
 function power(calc){
     if (calc == "padrao" && !padrao){
         padrao = true;
@@ -58,6 +57,14 @@ function botao(botao){
         botao.parentElement.childNodes[1].innerHTML = "";
         expExist = ""
     }
+    // Limpamos o display caso a finalizamos um cálculo anteriormente e não
+    //inserirmos um operador
+    if (calculou && !isNaN(codBotao)){
+        botao.parentElement.childNodes[1].innerHTML = "";
+        expExist = ""
+    } else {
+        calculou = false;
+    }
     // Tratamos os casos especiais
     switch (codBotao){
         case "=":
@@ -96,17 +103,14 @@ function botao(botao){
     botao.parentElement.childNodes[1].innerHTML = expFinal
 }
 
-
 function calcular(expressao){
     // Transformamos a string para os caracteres que o JS entende. EX: x para *
     expressao = trocar("x","*", expressao);
     expressao = trocar("÷","/", expressao);
-    // Apenas da ciêntifica
-    if (cientifica){
-        expressao = trocar("²","**2", expressao);
-        expressao = trocar("³","**3", expressao);
-        // expressao = calcularPi(expressao);
-    }
+    expressao = trocar("²","**2", expressao);
+    expressao = trocar("³","**3", expressao);
+    expressao = calcularPi(expressao);
+    //alert(expressao)
     // Caso não seja possivel resolver a expressão retornamos um erro,
     try {
         // Normalmente se usaria parse() mas não é recomendado devido a segurança
@@ -115,7 +119,8 @@ function calcular(expressao){
     } catch(err){
         return "ERRO";
     }
-    // Retornamos o valor calculado
+    // Retornamos o valor calculado e marcamos que um calculo foi feito
+    calculou = true;
     return Function('"use strict";return (' + expressao + ')')();
 }
 
@@ -127,4 +132,21 @@ function trocar(orig, novo, expressao){
         cont++;
     }
     return expressao;
+}
+
+// Feito depois
+function calcularPi (expressao){
+    let cont = 0 // Apenas uma segurança
+    while (expressao.includes("π") && cont < 20){
+        //Acha o pi
+        let piLugar = expressao.indexOf("π")
+        //testamos o que tem antes e colocamos um * se necessário
+        if (piLugar - 1 >= 0 && !isNaN(expressao[piLugar - 1])){
+            expressao = expressao.replace("π", "*3.1415926535");
+        } else {
+            expressao = expressao.replace("π", "3.1415926535");
+        }
+    cont++;
+    }
+    return expressao
 }
