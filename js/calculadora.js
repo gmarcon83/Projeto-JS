@@ -1,6 +1,7 @@
 var padrao = false;
 var cientifica = false;
-var calculou = false;
+var calculouNorm = false;
+var calculouCient = false;
 
 function power(calc){
     if (calc == "padrao" && !padrao){
@@ -58,23 +59,31 @@ function botao(botao){
         expExist = ""
     }
     // Limpamos o display caso a finalizamos um cálculo anteriormente e não
-    //inserirmos um operador
-    if (calculou && !isNaN(codBotao)){
-        botao.parentElement.childNodes[1].innerHTML = "";
-        expExist = ""
+    // inserirmos um operador
+    if (qualCalculadora == "calculadora-normal"){
+        if (calculouNorm && !isNaN(codBotao)){
+            botao.parentElement.childNodes[1].innerHTML = "";
+            expExist = ""
+        }
+        calculouNorm = false;
     } else {
-        calculou = false;
+        if (calculouCient && !isNaN(codBotao)){
+            botao.parentElement.childNodes[1].innerHTML = "";
+            expExist = ""
+        }
+        calculouCient = false;
     }
+
     // Tratamos os casos especiais
     switch (codBotao){
         case "=":
-            codBotao = calcular(expExist);
+            codBotao = calcular(expExist, qualCalculadora);
             botao.parentElement.childNodes[1].innerHTML = "";
             break;
         // Essa linha é um sacrificio que temos que fazer pra ficar mais bonita a
         // calculadora. Seria possivel usar √ no lugar do fonts awesome e evitar isso
         case "<i class=\"fas fa-square-root-alt\" aria-hidden=\"true\"></i>":
-            codBotao = Math.sqrt(calcular(expExist));
+            codBotao = Math.sqrt(calcular(expExist, qualCalculadora));
             botao.parentElement.childNodes[1].innerHTML = "";
             break;
         case "CE":
@@ -103,7 +112,7 @@ function botao(botao){
     botao.parentElement.childNodes[1].innerHTML = expFinal
 }
 
-function calcular(expressao){
+function calcular(expressao, qualCalculadora){
     // Transformamos a string para os caracteres que o JS entende. EX: x para *
     expressao = trocar("x","*", expressao);
     expressao = trocar("÷","/", expressao);
@@ -120,7 +129,11 @@ function calcular(expressao){
         return "ERRO";
     }
     // Retornamos o valor calculado e marcamos que um calculo foi feito
-    calculou = true;
+    if (qualCalculadora == "calculadora-normal"){
+        calculouNorm = true;
+    } else {
+        calculouCient = true;
+    }
     return Function('"use strict";return (' + expressao + ')')();
 }
 
