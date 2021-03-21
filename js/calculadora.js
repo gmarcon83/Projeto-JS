@@ -61,13 +61,13 @@ function botao(botao){
     // Limpamos o display caso a finalizamos um cálculo anteriormente e não
     // inserirmos um operador
     if (qualCalculadora == "calculadora-normal"){
-        if (calculouNorm && !isNaN(codBotao)){
+        if (calculouNorm && (!isNaN(codBotao) || codBotao == "π")){
             botao.parentElement.childNodes[1].innerHTML = "";
             expExist = ""
         }
         calculouNorm = false;
     } else {
-        if (calculouCient && !isNaN(codBotao)){
+        if (calculouCient && (!isNaN(codBotao) || codBotao == "π")){
             botao.parentElement.childNodes[1].innerHTML = "";
             expExist = ""
         }
